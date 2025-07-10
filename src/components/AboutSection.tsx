@@ -9,6 +9,8 @@ import logo from "@/images/full-logo.png";
 import CustomAlert from "./CustomAlert";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { db } from "@/config/firebase";
+import { collection, addDoc } from "firebase/firestore";
 const AboutSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -83,14 +85,14 @@ const AboutSection = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    
+
     if (name === "preferredDay") {
       if (!value) {
         setDateError("");
-        setFormData(prev => ({ ...prev, [name]: value }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
         return;
       }
-      
+
       if (!isValidDay(value)) {
         setDateError("Please select a day between Monday and Saturday");
         return;
@@ -112,17 +114,18 @@ const AboutSection = () => {
 
   const handleDateChange = (date: Date | null) => {
     setSelectedDate(date);
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      preferredDay: date ? date.toISOString().split('T')[0] : "",
+      preferredDay: date ? date.toISOString().split("T")[0] : "",
     }));
   };
 
   const handleDownloadBrochure = () => {
-    const brochureUrl = "https://cdn.shopify.com/s/files/1/0570/2415/1758/files/NITYA_Brochure_27.3.25_3_1.pdf?v=1746013824";
-    const link = document.createElement('a');
+    const brochureUrl =
+      "https://cdn.shopify.com/s/files/1/0570/2415/1758/files/NITYA_Brochure_27.3.25_3_1.pdf?v=1746013824";
+    const link = document.createElement("a");
     link.href = brochureUrl;
-    link.setAttribute('download', 'NITYA_Brochure.pdf');
+    link.setAttribute("download", "NITYA_Brochure.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -138,16 +141,21 @@ const AboutSection = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
-        .from('inquiries')
-        .insert([
-          {
-            ...formData,
-            created_at: new Date().toISOString(),
-          }
-        ]);
+      // Store data in Supabase
+      // const { error } = await supabase.from("inquiries").insert([
+      //   {
+      //     ...formData,
+      //     created_at: new Date().toISOString(),
+      //   },
+      // ]);
 
-      if (error) throw error;
+      // if (error) throw error;
+
+      // Store data in Firestore 'leads' collection
+      await addDoc(collection(db, "leads"), {
+        ...formData,
+        created_at: new Date().toISOString(),
+      });
 
       // Reset form
       setFormData({
@@ -160,6 +168,7 @@ const AboutSection = () => {
         location: "",
         preferredDay: "",
       });
+      setSelectedDate(null);
 
       // Show custom alert
       setShowAlert(true);
@@ -200,12 +209,12 @@ const AboutSection = () => {
   console.log(dateError);
   return (
     <section id="about" className="about-section">
-      <CustomAlert 
+      <CustomAlert
         isOpen={showAlert}
         onClose={handleCloseAlert}
         onDownload={handleDownloadBrochure}
       />
-      <div  className="about-container ">
+      <div className="about-container ">
         <div className="about-content">
           <h2 className="about-title md:items-center">
             What Is{" "}
@@ -227,7 +236,8 @@ const AboutSection = () => {
           <h3 className="about-development-title ">
             Why Continuous Professional Development Matters?
           </h3>
-          <div className="about-card-grid"
+          <div
+            className="about-card-grid"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -236,17 +246,17 @@ const AboutSection = () => {
               let className = "about-card";
               if (index === currentSlide) {
                 className += " about-card--active";
-              } else if (index === (currentSlide - 1 + cards.length) % cards.length) {
+              } else if (
+                index ===
+                (currentSlide - 1 + cards.length) % cards.length
+              ) {
                 className += " about-card--prev";
               } else if (index === (currentSlide + 1) % cards.length) {
                 className += " about-card--next";
               }
-              
+
               return (
-                <div
-                  key={index}
-                  className={className}
-                >
+                <div key={index} className={className}>
                   <Image
                     src={card.icon}
                     alt="Star"
@@ -342,14 +352,18 @@ const AboutSection = () => {
                   autoComplete="organization-title"
                   required
                 >
-                  <option disabled value="">Select Role</option>
+                  <option disabled value="">
+                    Select Role
+                  </option>
                   <option value="school owner">School Owner</option>
                   <option value="principal">Principal</option>
                   <option value="teacher">Teacher</option>
                 </select>
               </div>
               <div className="about-form-field">
-                <label htmlFor="noOfTeachers">Number of Teachers in School</label>
+                <label htmlFor="noOfTeachers">
+                  Number of Teachers in School
+                </label>
                 <input
                   type="number"
                   id="noOfTeachers"
@@ -375,7 +389,9 @@ const AboutSection = () => {
                 />
               </div>
               <div className="about-form-field">
-                <label htmlFor="preferredDay">Preferred Date for Training</label>
+                <label htmlFor="preferredDay">
+                  Preferred Date for Training
+                </label>
                 <DatePicker
                   selected={selectedDate}
                   onChange={handleDateChange}
