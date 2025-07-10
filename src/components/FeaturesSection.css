@@ -1,0 +1,301 @@
+.features-section {
+  padding: 6rem 0;
+  background: #ffffff;
+  padding-top: 1rem;
+  overflow: hidden;
+}
+
+.features-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.features-grid {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  cursor: grab;
+  touch-action: pan-y pinch-zoom;
+}
+
+.features-grid:active {
+  cursor: grabbing;
+}
+
+.features-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.features-card-large {
+  min-height: 280px;
+}
+
+.features-card-small {
+  min-height: 240px;
+}
+
+.features-card-green {
+  background: var(--primary-green);
+  color: white;
+}
+
+.features-card-blue {
+  background: var(--primary-lightblue);
+  color: white;
+}
+
+.features-card-orange {
+  background: var(--primary-orange);
+  color: var(--primary-blue);
+}
+
+.features-card-title {
+  font-family: var(--font-philosopher);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.features-card-text {
+  font-size: 1.25rem;
+  line-height: normal;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+  max-width: 80%;
+}
+
+.features-decorative-icon {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 6rem;
+  height: 6rem;
+}
+
+.features-title {
+  font-family: var(--font-philosopher);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: normal;
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.features-logo {
+  display: inline;
+  padding: 0;
+  width: auto;
+  height: 75px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .features-section {
+    padding-bottom: 0;
+  }
+  
+  .features-container {
+    padding: 0 1rem;
+    min-width: 100%;
+    max-width: 100vw;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    margin-bottom: 3rem;
+    width: 100%;
+    cursor: grab;
+  }
+
+  .features-grid.grabbing {
+    cursor: grabbing;
+  }
+
+  .features-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%) scale(0.95);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 400px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2rem;
+    pointer-events: none;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  .features-card.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+    transition-delay: 0.1s;
+  }
+
+  .features-card.prev {
+    transform: translateX(-100%) scale(0.95);
+    opacity: 0;
+    transition-delay: 0s;
+  }
+
+  .features-card.next {
+    transform: translateX(100%) scale(0.95);
+    opacity: 0;
+    transition-delay: 0s;
+  }
+
+  .features-card .features-card-title,
+  .features-card .features-card-text,
+  .features-card .features-decorative-icon {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .features-card.active .features-card-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+  }
+
+  .features-card.active .features-card-text {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+  }
+
+  .features-card.active .features-decorative-icon {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+
+  @keyframes fadeSlide {
+    0% {
+      opacity: 0;
+      transform: translateX(50px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50px) scale(0.95);
+    }
+  }
+
+  .features-slide-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .features-slide-dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0, 174, 126, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--primary-green);
+    transform: scale(1);
+  }
+
+  .features-slide-dot:hover {
+    transform: scale(1.2);
+  }
+
+  .features-slide-dot.active {
+    background-color: var(--primary-green);
+    width: 24px;
+    border-radius: 4px;
+    transform: scale(1.1);
+  }
+}
+
+@media (min-width: 1025px) {
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .features-bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-container {
+    max-width: 100vw;
+    padding: 0 0.5rem;
+  }
+
+  .features-title {
+    font-size: 2rem;
+  }
+
+  .features-logo {
+    height: 70px;
+  }
+
+  .features-grid {
+    height: 300px;
+  }
+
+  .features-card {
+    min-height: 300px;
+    padding: 1.5rem;
+  }
+  
+  .features-decorative-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+} 

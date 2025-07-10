@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Add scroll margin for sections */
+#about {
+  scroll-margin-top: 120px;
+}
+
+#programs {
+  scroll-margin-top: 120px;
+}
+
+#who-can-enroll {
+  scroll-margin-top: 120px;
+}
+
+#get-started {
+  scroll-margin-top: 120px;
+}
+
+#success-stories {
+  scroll-margin-top: 120px;
+}
+
+#contact {
+  scroll-margin-top: 120px;
+}
+
+#form-get-in-touch {
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 768px) {
+  #about,
+  #programs,
+  #who-can-enroll,
+  #get-started,
+  #success-stories,
+  #contact,
+  #form-get-in-touch {
+    scroll-margin-top: 100px;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary-green: #00855f;
+  --primary-blue: #1b366b;
+  --primary-lightblue: #0a4b9b;
+  --primary-orange: #ff9d00;
+  --text-color: #000000;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+main {
+  background: #0a4b9b;
+  /* color: #ffffff; */
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Container styles */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  min-height: 44px;
+  min-width: 44px;
+  background-color: var(--primary-green);
+  border-radius: 9999px;
+  border: 1px solid white;
+  color: white;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.button:hover {
+  background-color: #009b71;
+}
+
+/* Reset button styles */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Reset link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Icon styles */
+.w-5 {
+  width: 1.25rem;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Global font styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-philosopher);
+  font-weight: 700;
+}
+
+/* Utility classes for font families */
+.font-philosopher {
+  font-family: var(--font-philosopher);
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+/* Font weight utilities */
+.font-philosopher-bold {
+  font-family: var(--font-philosopher);
+  font-weight: 700;
+}
+
+.font-montserrat-regular {
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}

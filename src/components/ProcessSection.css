@@ -1,0 +1,239 @@
+.process-section {
+  padding: 6rem 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.process-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.process-title {
+  font-family: var(--font-philosopher);
+  font-size: 2.8rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.process-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: relative;
+  gap: 2rem;
+}
+
+.process-step {
+  background: var(--primary-lightblue);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  position: relative;
+  color: white;
+  opacity: 1;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.process-step-title {
+  font-family: var(--font-philosopher);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.process-step-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.process-step-number {
+  position: absolute;
+  bottom: -3.5rem;
+  right: 1rem;
+  font-family: var(--font-philosopher);
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 1;
+  z-index: 1;
+  -webkit-text-stroke: 1px white;
+}
+
+.process-step:nth-child(odd) .process-step-number {
+  color: var(--primary-green);
+}
+
+.process-step:nth-child(even) .process-step-number {
+  color: #ffa726;
+}
+
+/* Slider styles */
+.process-slide-container {
+  width: 100%;
+  position: relative;
+  /* overflow: hidden; */
+  padding: 0;
+  user-select: none;
+}
+
+.process-slide-wrapper {
+  display: flex;
+  width: 100%;
+  will-change: transform;
+  touch-action: pan-y pinch-zoom;
+}
+
+.process-step {
+  min-width: 100%;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+  cursor: grab;
+}
+
+.process-step:active {
+  cursor: grabbing;
+}
+
+.process-step--active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.process-step--transitioning {
+  animation: slideTransition 0.3s ease-out;
+}
+
+@keyframes slideTransition {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+.process-slide-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.process-slide-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--primary-blue);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.process-slide-dot--active {
+  background: var(--primary-blue);
+  transform: scale(1.5);
+}
+
+/* Add smooth transitions for all interactive elements */
+.process-step-title,
+.process-step-description,
+.process-step-number {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.process-step:not(.process-step--active) .process-step-title,
+.process-step:not(.process-step--active) .process-step-description,
+.process-step:not(.process-step--active) .process-step-number {
+  transform: translateX(-10px);
+}
+
+/* Enhance mobile responsiveness */
+@media (max-width: 768px) {
+  .process-section {
+    padding: 0 0 6rem;
+  }
+
+  .process-container {
+    padding: 0;
+  }
+
+  .process-header {
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .process-title {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .process-subtitle {
+    font-size: 1rem;
+  }
+
+  .process-grid {
+    display: block;
+  }
+
+  .process-slide-container {
+    margin: 0 -1rem;
+  }
+
+  .process-slide-wrapper {
+    padding: 1rem;
+  }
+
+  .process-step {
+    min-height: 260px;
+    padding: 1.75rem;
+    margin: 0 1rem;
+    border-radius: 1.25rem;
+  }
+
+  .process-step-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .process-step-description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .process-step-number {
+    font-size: 5rem;
+    bottom: -2rem;
+    right: 0.5rem;
+  }
+
+  .process-slide-dot {
+    width: 8px ;
+    border: 1px solid var(--primary-blue);
+    height: 8px ;
+  }
+  .process-slide-dot--active {
+    width: 24px;
+    border-radius: 4px;
+    
+  }
+}

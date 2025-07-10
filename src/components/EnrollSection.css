@@ -1,0 +1,240 @@
+.enroll-section {
+  padding: 6rem 0;
+  background: #ffffff;
+  padding-top: 0;
+}
+
+.enroll-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.enroll-title {
+  font-family: var(--font-philosopher);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.enroll-semicircle {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 450px;
+  margin: 0 auto;
+  background: #ffa726;
+  border-radius: 900px 900px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+  overflow: hidden; /* Ensures smaller circles stay within bounds */
+}
+
+.enroll-number {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 4rem;
+  background: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-philosopher);
+  opacity: 0;
+}
+
+
+
+#inner-orbit {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 10s linear infinite;
+}
+
+.circle-1 {
+  top: 50%;
+  left: 0%;
+  transform: rotate(265deg);
+}
+
+.circle-2 {
+  top: 90%;
+    left: 30%;
+    transform: rotate(200deg);
+}
+
+.circle-3 {
+  top: 50%;
+    left: 93%;
+}
+
+.circle-4 {
+  top: 0;
+}
+
+.circle-1 .enroll-number {
+  animation: counterRotate 10s linear infinite, fadeIn 0.5s ease-out forwards;
+}
+
+.circle-2 .enroll-number {
+  animation: counterRotate 10s linear infinite, fadeIn 0.5s ease-out 3s forwards;
+}
+
+.circle-3 .enroll-number {
+  animation: counterRotate 10s linear infinite, fadeIn 0.5s ease-out 6s forwards;
+}
+
+.circle-4 .enroll-number {
+  animation: counterRotate 10s linear infinite, fadeIn 0.5s ease-out 9s forwards;
+}
+
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes counterRotate {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(-360deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.enroll-main-text {
+  color: white;
+  font-family: var(--font-philosopher);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  max-width: 600px;
+  margin-top: 2rem;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.enroll-sub-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  text-align: center;
+  max-width: 500px;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.enroll-sparkle {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  color: white;
+  opacity: 0.6;
+  width: 2rem;
+  height: 2rem;
+}
+
+.enroll-semicircle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255, 167, 38, 0) 0%, rgba(255, 167, 38, 0.1) 100%);
+  pointer-events: none;
+}
+#inner-orbit {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 900px;
+    height: 900px;
+    /* border: 2px dashed #4a437f; */
+    border-radius: 100%;
+    animation: 30s linear infinite spin-right;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-orbit-circles {
+  position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    color: #fff;
+    background-color:var(--primary-blue);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-orbit-circles span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+/* Optional: Add a spinning animation for the orbit */
+@keyframes spin-right {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .enroll-section {
+    padding: 2rem 0;
+  }
+  .enroll-title {
+    font-size: 2rem;
+    margin-bottom: 0rem;
+  }
+  .enroll-container {
+    padding: 0;
+  }
+
+  
+  
+  
+}
+

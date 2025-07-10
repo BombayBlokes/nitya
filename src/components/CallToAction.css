@@ -1,0 +1,50 @@
+.cta-container {
+  background-color: var(--primary-orange);
+}
+
+.cta-title {
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.cta-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-green);
+  border: 1px solid #FFFFFF;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.22em;
+  color: #FFFFFF;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-green);
+}
+
+.cta-arrow {
+  width: 20px;
+  height: 20px;
+  stroke: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .cta-container {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+} 

@@ -1,0 +1,79 @@
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.video-modal-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.video-modal {
+  position: relative;
+  width: auto;
+ height: 90%;
+  background: black;
+  border-radius: 1rem;
+  overflow: hidden;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  aspect-ratio: 9 / 16;
+}
+
+.video-modal-overlay--visible .video-modal {
+  transform: scale(1);
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 10;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+}
+
+.video-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.video-modal-close-icon {
+  color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.video-modal-wrapper {
+  position: relative;
+  aspect-ratio: 9 / 16;
+}
+
+.video-modal-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  aspect-ratio: 9 / 16;
+} 

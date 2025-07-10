@@ -1,0 +1,393 @@
+.about-section {
+  position: relative;
+  background-image: url("https://plus.unsplash.com/premium_photo-1661963899181-3adc0a644f7b");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  padding: 4rem 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 5rem;
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-lightblue);
+  opacity: 1;
+}
+
+.about-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-content {
+  max-width: 600px;
+}
+
+.about-title {
+  font-family: var(--font-philosopher);
+    font-size: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: .25rem;
+    margin-bottom: .75rem;
+}
+/* 
+.about-title::after {
+  content: url("../images/three-line.svg");
+  height: 2px;
+} */
+
+.about-acronym {
+  display: inline-flex;
+  background: var(--primary-green);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.about-description {
+  margin-bottom: 2rem;
+}
+
+.about-development-title {
+  font-family: var(--font-philosopher);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.about-slide-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.about-slide-dot {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-slide-dot--active {
+  background-color: #4CAF50;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.about-card {
+  background: #fff;
+  color: black;
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.about-card-icon {
+  color: var(--primary-green);
+  margin-bottom: 0.8rem;
+}
+
+.about-card-text {
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.about-form-container {
+  background: var(--primary-blue);
+  border-radius: 2rem;
+  border: 0.12rem solid white;
+  padding: 3rem;
+}
+
+.about-form-title {
+  font-family: var(--font-philosopher);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+}
+
+.about-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-form-field label {
+  font-size: 1rem;
+}
+
+.about-form-field input,
+.about-form-field textarea,
+.about-form-field select {
+  background: white;
+  border: none;
+  font-family: var(--font-montserrat);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  color: var(--text-color);
+}
+
+
+.about-form-field--full-width {
+  grid-column: 1 / -1;
+}
+
+.about-submit-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0.8rem;
+  background-color: var(--primary-orange);
+  border-radius: 9999px;
+  border: 1px solid #062C5B;
+  color: #062C5B;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+}
+
+.about-arrow-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke-width: 2;
+  transform: rotate(-35deg);
+}
+
+.about-submit-button:hover {
+  opacity: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+
+
+  .about-acronym {
+    font-size: 1rem;
+  }
+
+  .about-description {
+    font-size: 1.125rem;
+  }
+
+  .about-development-title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .about-card-grid {
+    display: block;
+    position: relative;
+    height: 130px; /* Adjust based on your card height */
+    overflow: hidden;
+  }
+
+  .about-card {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+  }
+
+  .about-card--active {
+    opacity: 1;
+    transform: translateX(0);
+    border-color: #4CAF50;
+  }
+
+  .about-card--prev {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  .about-card--next {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  .about-form-container {
+    padding: 2rem;
+  }
+
+  .about-form-title {
+    font-size: 2.5rem;
+  }
+
+  .about-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-submit-div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-submit-button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+
+  .about-container {
+    padding: 0 1rem;
+  }
+
+  .about-title {
+    font-size: 1.75rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-acronym {
+    padding: 0.5rem 1rem;
+  }
+
+  .about-description {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .about-development-title {
+    font-size: 1.5rem;
+  }
+
+  .about-card-grid {
+    gap: 1rem;
+  }
+
+  .about-card-text {
+    font-size: 1rem;
+  }
+
+  .about-form-container {
+    padding: 1.5rem;
+  }
+
+  .about-form-title {
+    font-size: 2.5rem;
+  }
+
+  .about-form-field input,
+  .about-form-field textarea,
+  .about-form-field select {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.date-picker-input {
+  background: white;
+  border: none;
+  font-family: var(--font-montserrat);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.react-datepicker {
+  font-family: var(--font-montserrat);
+  border: 1px solid var(--primary-blue);
+  border-radius: 0.5rem;
+}
+
+.react-datepicker__header {
+  background-color: var(--primary-blue);
+  border-bottom: none;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  padding-top: 0.8rem;
+}
+
+.react-datepicker__current-month {
+  color: white;
+  font-weight: 600;
+}
+
+.react-datepicker__day-name {
+  color: white;
+}
+
+.react-datepicker__day--disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.react-datepicker__day--selected {
+  background-color: #4CAF50 !important;
+  color: white;
+}
+
+.react-datepicker__day:hover {
+  background-color: #4CAF50;
+  color: white;
+} 

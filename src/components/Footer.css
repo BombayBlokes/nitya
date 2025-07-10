@@ -1,0 +1,155 @@
+.footer {
+  background-color: var(--primary-lightblue);
+  color: white;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-logo-section {
+  /* margin-bottom: 3rem; */
+}
+
+.footer-logo {
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-contact-section {
+  margin-bottom: 3rem;
+}
+
+.footer-contact-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.footer-contact-info {
+  display: flex;
+  gap: 3rem;
+  /* margin-bottom: 2rem; */
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-contact-label {
+  font-weight: 500;
+  color: white;
+}
+
+.footer-contact-link {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-contact-link:hover {
+  opacity: 0.8;
+}
+
+.footer-backed-by-section {
+  margin-bottom: 3rem;
+}
+
+.footer-backed-by-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.footer-partners {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.footer-partner {
+  display: flex;
+  gap: 2rem;
+  max-width: 500px;
+}
+
+.footer-partner-logo {
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-partner-info h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.footer-partner-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-copyright {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .footer-contact-info {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-partners {
+    gap: 2rem;
+  }
+
+  .footer-partner {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-contact-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-logo-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .footer-contact-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-contact-item {
+    justify-content: center;
+  }
+
+  .footer-backed-by-section {
+    text-align: center;
+  }
+
+  .footer-backed-by-title {
+    text-align: center;
+  }
+}
