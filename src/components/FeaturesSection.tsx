@@ -221,8 +221,7 @@ const FeaturesSection = () => {
                     Trusted Content Backed By Legacy
                   </h3>
                   <p className="features-card-text">
-                    Built on Navneet&apos;s expertise in educational content
-                    leadership in teacher training
+                    Built on Navneet's expertise in educational content
                   </p>
                 </div>
                 <Image

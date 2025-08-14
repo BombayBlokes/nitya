@@ -231,7 +231,7 @@ const Hero = () => {
               <div className="hero-right-content">
                 <div className="hero-description">
                   <p className="hero-description-text">
-                    <br />A initiative by{" "}
+                    <br />An initiative by{" "}
                     <span className="hero-highlight">
                       Navneet Education Limited,
                     </span>{" "}
