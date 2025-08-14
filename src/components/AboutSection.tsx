@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import subtract from "../images/subtract.png";
 import { supabase } from "@/lib/supabase";
-import logo from "@/images/full-logo.png";
+import logo from "@/images/nitya-logo-1.png";
 import CustomAlert from "./CustomAlert";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -219,7 +219,7 @@ const AboutSection = () => {
           <h2 className="about-title md:items-center">
             What Is{" "}
             <Image
-              width={100}
+              width={120}
               height={100}
               src={logo}
               alt="NITYA"

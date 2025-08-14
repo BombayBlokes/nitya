@@ -67,23 +67,38 @@
   font-weight: 600;
   margin-bottom: 2rem;
   color: white;
+  text-align: center;
 }
 
 .footer-partners {
   display: flex;
-  gap: 4rem;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .footer-partner {
   display: flex;
-  gap: 2rem;
+  gap: 10px;
   max-width: 500px;
 }
 
 .footer-partner-logo {
-  height: auto;
+  height: 70px;
   object-fit: contain;
+}
+
+.footer-partners {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-partner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-partner-info h4 {
@@ -91,12 +106,14 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: white;
+  text-align: center;
 }
 
 .footer-partner-info p {
   font-size: 1rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
+  text-align: center;
 }
 
 .footer-copyright {

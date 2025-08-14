@@ -65,23 +65,23 @@ const Hero = () => {
             <div className="hero-program-label">
               <div className="hero-label-container">
                 <span className="hero-label-text">
-                <Image
-                  src={star}
-                  alt="star Icon"
-                  width={30}
-                  height={30}
-                  className=""
-                  sizes="60px"
-                />
-                NITYA Teacher Training Program
                   <Image
-                  src={star}
-                  alt="star Icon"
-                  width={30}
-                  height={30}
-                  className=""
-                  sizes="60px"
-                />
+                    src={star}
+                    alt="star Icon"
+                    width={30}
+                    height={30}
+                    className=""
+                    sizes="60px"
+                  />
+                  NITYA Teacher Training Program
+                  <Image
+                    src={star}
+                    alt="star Icon"
+                    width={30}
+                    height={30}
+                    className=""
+                    sizes="60px"
+                  />
                 </span>
               </div>
             </div>
@@ -92,13 +92,12 @@ const Hero = () => {
                 Nurturing & <br className="md:hidden block" /> Inspiring
                 Teachers,
                 <br />
-               
                 Yielding Achievement
               </h1>
             </div>
 
             {/* only for mobile devices */}
-            <div className="hero-mobile-logos-container">
+            <div className="flex flex-col justify-center items-center">
               <p
                 style={{
                   fontWeight: "500",
@@ -107,52 +106,20 @@ const Hero = () => {
                   color: "var(--text-color)",
                 }}
               >
-                A joint initiative by
+                A initiative by
               </p>
 
-              <div className="hero-mobile-logos">
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                  }}
-                >
-                  <Link href="https://www.abea.in/" target="_blank" rel="noopener noreferrer">
-                    <Image
-                      src={abea}
-                      alt="ABEA Logo"
-                      width={160}
-                      height={48}
-                      style={{ objectFit: "contain" }}
-                      priority
-                      sizes="160px"
-                    />
-                  </Link>
-                  <p
-                    style={{
-                      fontWeight: "500",
-                      textAlign: "center",
-                      fontSize: "0.875rem",
-                    }}
+              <div className="flex flex-col justify-center items-center">
+                <div className="flex flex-col justify-center items-center">
+                  <Link
+                    href="https://navneet.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Aditya Birla Education Academy
-                  </p>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                  }}
-                >
-                  <Link href="https://navneet.com" target="_blank" rel="noopener noreferrer">
                     <Image
                       src={navneet}
                       alt="Navneet Logo"
-                      width={160}
+                      width={120}
                       height={48}
                       style={{ objectFit: "contain" }}
                       priority
@@ -235,7 +202,11 @@ const Hero = () => {
                   height={114}
                   className="hero-curved-arrow"
                 />
-                <Link href="#form-get-in-touch" className="hero-button" aria-label="Download Brochure">
+                <Link
+                  href="#form-get-in-touch"
+                  className="hero-button"
+                  aria-label="Download Brochure"
+                >
                   Download Brochure
                   <div>
                     <svg
@@ -260,10 +231,9 @@ const Hero = () => {
               <div className="hero-right-content">
                 <div className="hero-description">
                   <p className="hero-description-text">
-                    <br />A joint initiative by{" "}
+                    <br />A initiative by{" "}
                     <span className="hero-highlight">
-                      Aditya Birla Education Academy and Navneet Education
-                      Limited,
+                      Navneet Education Limited,
                     </span>{" "}
                     offers personalized, need-based training to empower
                     educators in today&apos;s evolving landscape.
@@ -271,7 +241,11 @@ const Hero = () => {
                 </div>
 
                 <div className="hero-logos">
-                  <Link href="https://www.abea.in/" target="_blank" rel="noopener noreferrer">
+                  {/* <Link
+                    href="https://www.abea.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
                       src={abea}
                       alt="ABEA Logo"
@@ -281,8 +255,12 @@ const Hero = () => {
                       priority
                       sizes="160px"
                     />
-                  </Link>
-                  <Link href="https://navneet.com" target="_blank" rel="noopener noreferrer">
+                  </Link> */}
+                  <Link
+                    href="https://navneet.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
                       src={navneet}
                       alt="Navneet Logo"
@@ -299,45 +277,45 @@ const Hero = () => {
           </div>
         </div>
       </div>
-     <div className="md:hidden block">
-     <p className="text-white text-center text-sm px-4">
-        <br />
-        NITYA Teacher Training Program is a personalized, need-based training to
-        empower educators in today&apos;s evolving landscape.
-      </p>
-      <br />
-      <div className="flex flex-col items-center justify-center gap-4">
-        <svg
-          width="22"
-          height="18"
-          viewBox="0 0 22 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M5.39355 18C4.35269 18 3.50108 17.7857 2.83871 17.3571C2.17634 16.9286 1.63226 16.381 1.20645 15.7143C0.733333 14.9048 0.40215 14.0714 0.212903 13.2143C0.0709677 12.3095 0 11.5714 0 11C0 8.66667 0.591398 6.54762 1.77419 4.64286C2.95699 2.7381 4.80215 1.19048 7.30968 0L7.94839 1.28571C6.48172 1.90476 5.2043 2.88095 4.11613 4.21429C3.07527 5.54762 2.55484 6.90476 2.55484 8.28572C2.55484 8.85714 2.62581 9.35714 2.76774 9.78572C3.52473 9.16667 4.4 8.85714 5.39355 8.85714C6.62366 8.85714 7.68817 9.2619 8.5871 10.0714C9.48602 10.881 9.93548 12 9.93548 13.4286C9.93548 14.7619 9.48602 15.8571 8.5871 16.7143C7.68817 17.5714 6.62366 18 5.39355 18ZM17.4581 18C16.4172 18 15.5656 17.7857 14.9032 17.3571C14.2409 16.9286 13.6968 16.381 13.271 15.7143C12.7978 14.9048 12.4667 14.0714 12.2774 13.2143C12.1355 12.3095 12.0645 11.5714 12.0645 11C12.0645 8.66667 12.6559 6.54762 13.8387 4.64286C15.0215 2.7381 16.8667 1.19048 19.3742 0L20.0129 1.28571C18.5462 1.90476 17.2688 2.88095 16.1806 4.21429C15.1398 5.54762 14.6194 6.90476 14.6194 8.28572C14.6194 8.85714 14.6903 9.35714 14.8323 9.78572C15.5892 9.16667 16.4645 8.85714 17.4581 8.85714C18.6882 8.85714 19.7527 9.2619 20.6516 10.0714C21.5505 10.881 22 12 22 13.4286C22 14.7619 21.5505 15.8571 20.6516 16.7143C19.7527 17.5714 18.6882 18 17.4581 18Z"
-            fill="#FF9D00"
-          />
-        </svg>
-        <p className="text-white text-center text-sm px-6">
-          Creating Impactful Learning Environments Across Schools
+      <div className="md:hidden block">
+        <p className="text-white text-center text-sm px-4">
+          <br />
+          NITYA Teacher Training Program is a personalized, need-based training
+          to empower educators in today&apos;s evolving landscape.
         </p>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="flex flex-col items-center justify-center">
-            <h2 className="text-2xl text-[var(--primary-orange)]">
-              {teacherCount.toLocaleString()}+
-            </h2>
-            <p className="text-sm text-white">Teachers Trained</p>
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            <h2 className="text-2xl  text-[var(--primary-orange)] ">
-              {workshopCount}+
-            </h2>
-            <p className="text-sm text-white">Workshops Conducted</p>
+        <br />
+        <div className="flex flex-col items-center justify-center gap-4">
+          <svg
+            width="22"
+            height="18"
+            viewBox="0 0 22 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.39355 18C4.35269 18 3.50108 17.7857 2.83871 17.3571C2.17634 16.9286 1.63226 16.381 1.20645 15.7143C0.733333 14.9048 0.40215 14.0714 0.212903 13.2143C0.0709677 12.3095 0 11.5714 0 11C0 8.66667 0.591398 6.54762 1.77419 4.64286C2.95699 2.7381 4.80215 1.19048 7.30968 0L7.94839 1.28571C6.48172 1.90476 5.2043 2.88095 4.11613 4.21429C3.07527 5.54762 2.55484 6.90476 2.55484 8.28572C2.55484 8.85714 2.62581 9.35714 2.76774 9.78572C3.52473 9.16667 4.4 8.85714 5.39355 8.85714C6.62366 8.85714 7.68817 9.2619 8.5871 10.0714C9.48602 10.881 9.93548 12 9.93548 13.4286C9.93548 14.7619 9.48602 15.8571 8.5871 16.7143C7.68817 17.5714 6.62366 18 5.39355 18ZM17.4581 18C16.4172 18 15.5656 17.7857 14.9032 17.3571C14.2409 16.9286 13.6968 16.381 13.271 15.7143C12.7978 14.9048 12.4667 14.0714 12.2774 13.2143C12.1355 12.3095 12.0645 11.5714 12.0645 11C12.0645 8.66667 12.6559 6.54762 13.8387 4.64286C15.0215 2.7381 16.8667 1.19048 19.3742 0L20.0129 1.28571C18.5462 1.90476 17.2688 2.88095 16.1806 4.21429C15.1398 5.54762 14.6194 6.90476 14.6194 8.28572C14.6194 8.85714 14.6903 9.35714 14.8323 9.78572C15.5892 9.16667 16.4645 8.85714 17.4581 8.85714C18.6882 8.85714 19.7527 9.2619 20.6516 10.0714C21.5505 10.881 22 12 22 13.4286C22 14.7619 21.5505 15.8571 20.6516 16.7143C19.7527 17.5714 18.6882 18 17.4581 18Z"
+              fill="#FF9D00"
+            />
+          </svg>
+          <p className="text-white text-center text-sm px-6">
+            Creating Impactful Learning Environments Across Schools
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex flex-col items-center justify-center">
+              <h2 className="text-2xl text-[var(--primary-orange)]">
+                {teacherCount.toLocaleString()}+
+              </h2>
+              <p className="text-sm text-white">Teachers Trained</p>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <h2 className="text-2xl  text-[var(--primary-orange)] ">
+                {workshopCount}+
+              </h2>
+              <p className="text-sm text-white">Workshops Conducted</p>
+            </div>
           </div>
         </div>
       </div>
-     </div>
     </>
   );
 };

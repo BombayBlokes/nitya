@@ -1,21 +1,21 @@
 "use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import './CredentialsSection.css';
-import certificateImg from '@/images/certificate.png';
+import { useState } from "react";
+import Image from "next/image";
+import "./CredentialsSection.css";
+import certificateImg from "@/images/certificate-new.png";
 
 const CredentialsSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    document.body.style.overflow = 'unset'; // Restore scrolling
+    document.body.style.overflow = "unset"; // Restore scrolling
   };
 
   return (
@@ -26,10 +26,12 @@ const CredentialsSection = () => {
             Earn Valuable Credentials & Recognition with NITYA
           </h2>
           <p className="credentials-description">
-            Complete program milestones and receive certifications that reflect your commitment to professional growth.
+            Complete program milestones and receive certifications that reflect
+            your commitment to professional growth.
           </p>
           <p className="credentials-detail">
-            Successfully complete all modules and earn your advanced certificate, jointly endorsed by Navneet Education Limited and Aditya Birla Education Academy demonstrating your expertise in modern, NEP 2020-aligned teaching practices.
+            Successfully complete all modules and earn your advanced
+            certificate by Navneet Education Limited.
           </p>
         </div>
         <div className="credentials-image" onClick={openModal}>
@@ -47,7 +49,9 @@ const CredentialsSection = () => {
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content">
-            <button className="modal-close" onClick={closeModal}>×</button>
+            <button className="modal-close" onClick={closeModal}>
+              ×
+            </button>
             <Image
               src={certificateImg}
               alt="NITYA Certification"
@@ -63,4 +67,4 @@ const CredentialsSection = () => {
   );
 };
 
-export default CredentialsSection; 
+export default CredentialsSection;

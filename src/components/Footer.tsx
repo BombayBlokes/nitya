@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import "./Footer.css";
-import logo from "@/images/full-logo.png";
-import abea from "@/images/ftl1.png";
+import logo from "@/images/nitya-logo-1.png";
 import navneet from "../images/navneet-logo.png";
 
 const Footer = () => {
@@ -51,22 +50,6 @@ const Footer = () => {
         <div className="footer-backed-by-section">
           <h3 className="footer-backed-by-title">Backed By</h3>
           <div className="footer-partners">
-            <div className="footer-partner">
-              <Image
-                src={abea}
-                alt="Aditya Birla Education Academy"
-                width={150}
-                height={80}
-                className="footer-partner-logo"
-              />
-              <div className="footer-partner-info">
-                <h4>Aditya Birla Education Academy</h4>
-                <p>
-                  Empowering educators with impactful learning opportunities to
-                  fuel their ambitions and career growth.
-                </p>
-              </div>
-            </div>
             <div className="footer-partner">
               <Image
                 src={navneet}

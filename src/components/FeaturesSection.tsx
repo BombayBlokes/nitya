@@ -7,7 +7,7 @@ import butterfly from "../images/Butterfly.svg";
 import direction from "../images/Direction.svg";
 import subtract from "../images/subtract-green.svg";
 import depth from "../images/Depth.svg";
-import logo from "../images/blue-full-logo.png";
+import logo from "../images/nitya-logo.png";
 
 const FeaturesSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -43,7 +43,7 @@ const FeaturesSection = () => {
     },
     {
       title: "Trusted Content Backed by Legacy",
-      text: "Built on Navneet's expertise in educational content & ABEA's leadership in teacher cher trainings",
+      text: "Built on Navneet's expertise in educational contents",
       icon: subtract,
       alt: "Sparkle Icon",
       className: `features-card features-card-small features-card-blue`,
@@ -135,7 +135,9 @@ const FeaturesSection = () => {
         setCurrentSlide((prev) => (prev + 1) % allCards.length);
       } else {
         // Swiped/dragged right - go to previous slide
-        setCurrentSlide((prev) => (prev - 1 + allCards.length) % allCards.length);
+        setCurrentSlide(
+          (prev) => (prev - 1 + allCards.length) % allCards.length
+        );
       }
     }
   };
@@ -154,10 +156,10 @@ const FeaturesSection = () => {
           />{" "}
           Apart?
         </h2>
-        <p className="features-description text-center max-w-2xl mx-auto">
+        {/* <p className="features-description text-center max-w-2xl mx-auto">
           Built on Aditya Birla Education Academy&apos;s leadership in teacher training
           and Navneet Education Limited&apos;s expertise in educational content
-        </p>
+        </p> */}
         <br />
         <br />
         {isMobile ? (
@@ -171,7 +173,7 @@ const FeaturesSection = () => {
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseLeave}
-              style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+              style={{ cursor: isDragging ? "grabbing" : "grab" }}
             >
               {allCards.map((card, index) => (
                 <div
@@ -219,7 +221,8 @@ const FeaturesSection = () => {
                     Trusted Content Backed By Legacy
                   </h3>
                   <p className="features-card-text">
-                  Built on Navneet&apos;s expertise in educational content & ABEA&apos;s leadership in teacher training
+                    Built on Navneet&apos;s expertise in educational content
+                    leadership in teacher training
                   </p>
                 </div>
                 <Image

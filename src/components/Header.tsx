@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, X } from "lucide-react";
 import "./Header.css";
 import { useState } from "react";
-import logo from "../images/Nitya-Logo_Final_CMYK 2.png";
+import logo from "../images/nitya-logo-white.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,12 +19,13 @@ const Header = () => {
       <header className="header">
         <Link href="/" className="logo">
           <Image
-            width={133}
+            width={123}
             height={69}
             src={logo}
             alt="Nitya Logo"
             style={{ objectFit: "contain" }}
             priority
+            className="rounded-full"
           />
         </Link>
 
@@ -41,17 +42,26 @@ const Header = () => {
           <Link href="#success-stories" className="nav-link">
             Success Stories
           </Link>
-            <Link href="#contact" className="nav-link">
+          <Link href="#contact" className="nav-link">
             Contact
           </Link>
         </nav>
 
-        <Link href="#form-get-in-touch" className="button " style={{marginRight: "1rem"}} aria-label="Get Started">
+        <Link
+          href="#form-get-in-touch"
+          className="button "
+          style={{ marginRight: "1rem" }}
+          aria-label="Get Started"
+        >
           Get Started
           <ArrowRight className="arrow-icon" />
         </Link>
 
-        <button className="menu-button" onClick={toggleMenu} aria-label="Toggle menu">
+        <button
+          className="menu-button"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
           <svg
             width="22"
             height="22"
@@ -82,19 +92,11 @@ const Header = () => {
         </button>
       </header>
 
-      <nav className={`mobile-nav ${isMenuOpen ? 'active' : ''}`}>
-        <Link
-          href="#about"
-          className="mobile-nav-link"
-          onClick={toggleMenu}
-        >
+      <nav className={`mobile-nav ${isMenuOpen ? "active" : ""}`}>
+        <Link href="#about" className="mobile-nav-link" onClick={toggleMenu}>
           About
         </Link>
-        <Link
-          href="#programs"
-          className="mobile-nav-link"
-          onClick={toggleMenu}
-        >
+        <Link href="#programs" className="mobile-nav-link" onClick={toggleMenu}>
           Programs
         </Link>
         <Link
@@ -111,23 +113,23 @@ const Header = () => {
         >
           Success Stories
         </Link>
-        <Link
-          href="#contact"
-          className="mobile-nav-link"
-          onClick={toggleMenu}
-        >
+        <Link href="#contact" className="mobile-nav-link" onClick={toggleMenu}>
           Contact
         </Link>
         <Link href="#form-get-in-touch" className="mobile-button">
           Get Started
           <ArrowRight className="arrow-icon" />
         </Link>
-        <br/>
-        {isMenuOpen &&
-        <button className="menu-button flex justify-center items-center w-full" onClick={toggleMenu} aria-label="Close menu">
-          <X style={{zIndex: "100"}} className="menu-icon" />
-        </button>
-        }
+        <br />
+        {isMenuOpen && (
+          <button
+            className="menu-button flex justify-center items-center w-full"
+            onClick={toggleMenu}
+            aria-label="Close menu"
+          >
+            <X style={{ zIndex: "100" }} className="menu-icon" />
+          </button>
+        )}
       </nav>
     </>
   );
