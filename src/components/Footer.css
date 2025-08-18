@@ -18,6 +18,13 @@
 .footer-logo {
   height: auto;
   object-fit: contain;
+  margin-left: -20px;
+}
+
+@media (max-width: 768px) {
+  .footer-logo {
+    margin-left: 0;
+  }
 }
 
 .footer-contact-section {
@@ -27,13 +34,13 @@
 .footer-contact-title {
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: white;
 }
 
 .footer-contact-info {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   /* margin-bottom: 2rem; */
 }
 
@@ -59,13 +66,17 @@
 }
 
 .footer-backed-by-section {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
 }
 
 .footer-backed-by-title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: white;
   text-align: center;
 }
@@ -74,6 +85,8 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: start;
+  align-items: start;
 }
 
 .footer-partner {
@@ -85,6 +98,15 @@
 .footer-partner-logo {
   height: 70px;
   object-fit: contain;
+  align-self: start;
+  justify-self: start;
+  margin-left: -20px;
+}
+
+@media (max-width: 768px) {
+  .footer-partner-logo {
+    margin-left: 0;
+  }
 }
 
 .footer-partners {
@@ -106,14 +128,26 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: white;
-  text-align: center;
+  text-align: start;
 }
 
 .footer-partner-info p {
   font-size: 1rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
-  text-align: center;
+  text-align: start;
+}
+
+.footer-partner-info h4,
+.footer-partner-info p {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .footer-partner-info h4,
+  .footer-partner-info p {
+    text-align: center;
+  }
 }
 
 .footer-copyright {
@@ -122,6 +156,37 @@
   font-size: 0.875rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .footer-partners {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-partner-logo {
+    align-self: center;
+    justify-self: center;
+  }
+
+  .footer-partner-info h4 {
+    text-align: center;
+  }
+
+  .footer-partner-info p {
+    text-align: center;
+  }
+
+  .footer-backed-by-title {
+    text-align: center;
+  }
+
+  .footer-backed-by-section {
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
