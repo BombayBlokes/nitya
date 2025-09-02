@@ -60,6 +60,14 @@
   justify-content: center;
 }
 
+/* Large screen specific styles */
+@media (min-width: 1024px) {
+  .architect-category {
+    height: 220px;
+    width: 300px;
+  }
+}
+
 .architect-category:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -309,7 +317,6 @@
   /* Mobile carousel styles */
   .architects-carousel-wrapper {
     margin: 2rem 0;
-    padding: 0 1rem;
   }
 
   .embla {
@@ -320,7 +327,6 @@
   .embla__container {
     display: flex;
     gap: 1rem;
-    padding: 0.5rem;
   }
 
   .embla__slide {
@@ -329,15 +335,15 @@
     height: auto;
   }
 
-  .embla__slide .architect-category {
+  .embla__slide {
     width: 100%;
     max-width: none;
     margin: 0;
-    height: 220px;
+    height: 200px;
   }
 
   .architect-category {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .architect-icon img {
