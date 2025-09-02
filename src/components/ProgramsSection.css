@@ -6,7 +6,6 @@
   border-radius: 30px 30px 0 0;
 }
 
-
 .programs-video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -35,12 +34,11 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 
 .programs-title-wrapper {
   position: relative;
-  margin-bottom: 2rem;
   max-width: 800px;
   width: 100%;
 }
@@ -49,7 +47,6 @@
   font-family: var(--font-philosopher);
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
   line-height: normal;
   color: var(--primary-green);
   text-align: center;
@@ -85,7 +82,7 @@
   color: #333;
   text-align: center;
   max-width: 800px;
-  margin: 2rem auto 0;
+  margin: 1rem auto 0;
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -212,6 +209,14 @@
   border-radius: 4px;
 }
 
+/* MuxPlayer custom play button styles
+.aspect-video mux-player::part(center play button) {
+  background-color: white !important;
+  border: 2px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: black !important;
+} */
+
 /* === SINGLE BREAKPOINT @768px === */
 
 @media (max-width: 768px) {
@@ -301,5 +306,4 @@
   .programs-slide-dot--active {
     background-color: var(--primary-green);
   }
-
 }

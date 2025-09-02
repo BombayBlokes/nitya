@@ -10,6 +10,7 @@ import SuccessSection from "@/components/SuccessSection";
 
 import ProgramArchitects from "@/components/ProgramArchitects";
 // import CallToAction from "@/components/CallToAction";
+import GallerySection from "@/components/GallerySection";
 import FAQSection from "@/components/FAQSection";
 import CredentialsSection from "@/components/CredentialsSection";
 
@@ -58,6 +59,7 @@ export default function Home() {
         </div>
         <ModulesSection />
         <CredentialsSection />
+        <GallerySection />
         <FAQSection />
         <ProcessSection steps={stepsData} />
         <div id="success-stories">

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import "./ProgramArchitects.css";
 import { useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import prodipta from "../images/prodipta.png";
 import archana from "../images/archana.png";
 
@@ -16,13 +17,13 @@ const architects = [
       "Advocate of creativity in math education and robotics",
       "John Templeton Fellow on Gifted Education, University of Iowa",
       "Co-author of CBSE Math Text Book by NCERT",
-      "Coordinator International Initiatives and Head of Faculty - Mathematics at Aditya Birla World Academy"
+      "Coordinator International Initiatives and Head of Faculty - Mathematics at Aditya Birla World Academy",
     ],
     image: prodipta,
   },
   {
     name: "Archana Awade",
-    title: "General Manager – Curriculum & Training at ABEA",
+    title: "General Manager - Curriculum & Training at ABEA",
     experience: "25+ Years",
     description: [
       "Expert in CBSE, ICSE, IB & IGCSE institutional design",
@@ -35,6 +36,11 @@ const architects = [
 
 const ProgramArchitects = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    slidesToScroll: 1,
+  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,72 +51,190 @@ const ProgramArchitects = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return (
-    <section className={isMobile ? "program-architects-mobile-section" : "program-architects-section"}>
-      <div className={isMobile ? "program-architects-mobile-content" : "program-architects-content"}>
-        <h2 className={isMobile ? "program-architects-mobile-title" : "program-architects-title"}>Program Architects</h2>
-        <p className={isMobile ? "program-architects-mobile-description" : "program-architects-description"}>
-        Our expert-led teaching team is built by educators, for educators bringing real classroom experience, deep subject expertise, and innovative strategies to empower teachers. Comprising principals, directors, and educational leaders, our mentors bridge skill gaps, introduce future-ready teaching methods, and ensure impactful learning outcomes.
-        </p>
-      </div>
+  useEffect(() => {
+    if (!emblaApi || !isMobile) return;
 
-      {!isMobile ? (
-        <div className="program-architects-cards-container">
-          {architects.map((architect, index) => (
-            <div key={index} className="program-architects-card">
-              <Image
-                src={architect.image}
-                alt={architect.name}
-                width={120}
-                height={120}
-                className="program-architects-card-image"
-              />
-              <div className="program-architects-card-content">
-                <h3>
-                  {architect.name}
-                  <span className="program-architects-experience-badge">
-                    {architect.experience}
-                  </span>
-                </h3>
-                <p className="program-architects-position-title">{architect.title}</p>
-                <ul>
-                {architect.description.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
+    const interval = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [emblaApi, isMobile]);
+
+  return (
+    <section
+      className={
+        isMobile
+          ? "program-architects-mobile-section"
+          : "program-architects-section"
+      }
+    >
+      <div
+        className={
+          isMobile
+            ? "program-architects-mobile-content"
+            : "program-architects-content"
+        }
+      >
+        <h2
+          className={
+            isMobile
+              ? "program-architects-mobile-title"
+              : "program-architects-title"
+          }
+        >
+          Program Architects
+        </h2>
+        <p className="text-pretty">
+          At NITYA, our programs are crafted and led by a team of expert
+          educators who understand the realities of today's classrooms. With
+          backgrounds as principals, directors, subject specialists, and
+          educational leaders, they bring both deep expertise and practical
+          strategies to empower teachers and drive lasting impact.
+        </p>
+
+        {isMobile ? (
+          <div className="architects-carousel-wrapper">
+            <div className="embla" ref={emblaRef}>
+              <div className="embla__container">
+                <div className="embla__slide">
+                  <div className="architect-category">
+                    <div className="architect-icon">
+                      <img
+                        src="/program-svg/team.svg"
+                        alt="Principals & Directors"
+                      />
+                    </div>
+                    <h3 className="architect-title">Principals & Directors</h3>
+                    <p className="architect-description">
+                      Visionary leaders shaping teaching practices with proven
+                      school leadership experience
+                    </p>
+                  </div>
+                </div>
+
+                <div className="embla__slide">
+                  <div className="architect-category">
+                    <div className="architect-icon">
+                      <img
+                        src="/program-svg/experts.svg"
+                        alt="Subject Experts"
+                      />
+                    </div>
+                    <h3 className="architect-title">Subject Experts</h3>
+                    <p className="architect-description">
+                      Specialists who bring clarity, depth, and mastery across
+                      disciplines
+                    </p>
+                  </div>
+                </div>
+
+                <div className="embla__slide">
+                  <div className="architect-category">
+                    <div className="architect-icon">
+                      <img src="/program-svg/solutions.svg" alt="Innovators" />
+                    </div>
+                    <h3 className="architect-title">Innovators</h3>
+                    <p className="architect-description">
+                      Educators introducing future-ready methods that keep
+                      learning relevant
+                    </p>
+                  </div>
+                </div>
+
+                <div className="embla__slide">
+                  <div className="architect-category">
+                    <div className="architect-icon">
+                      <img src="/program-svg/mentoring.svg" alt="Mentors" />
+                    </div>
+                    <h3 className="architect-title">Mentors</h3>
+                    <p className="architect-description">
+                      Guides who close skill gaps and build teacher confidence
+                      with practical tools
+                    </p>
+                  </div>
+                </div>
+
+                <div className="embla__slide">
+                  <div className="architect-category">
+                    <div className="architect-icon">
+                      <img
+                        src="/program-svg/team-leader.svg"
+                        alt="Impact-Driven Leaders"
+                      />
+                    </div>
+                    <h3 className="architect-title">Impact-Driven Leaders</h3>
+                    <p className="architect-description">
+                      Committed to ensuring measurable improvements in classroom
+                      outcomes
+                    </p>
+                  </div>
+                </div>
               </div>
-             
             </div>
-          ))}
-        </div>
-      ) : (
-        <div className="program-architects-mobile-cards">
-          {architects.map((architect, index) => (
-            <div key={index} className="program-architects-mobile-card">
-              <Image
-                src={architect.image}
-                alt={architect.name}
-                width={80}
-                height={80}
-              />
-              <div>
-                <h3>
-                  {architect.name}
-                  <span className="program-architects-mobile-experience">
-                    {architect.experience}
-                  </span>
-                </h3>
-                <p className="program-architects-mobile-position">{architect.title}</p>
+          </div>
+        ) : (
+          <div className="architects-grid">
+            <div className="architect-category">
+              <div className="architect-icon">
+                <img src="/program-svg/team.svg" alt="Principals & Directors" />
               </div>
-              <ul>
-                {architect.description.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
+              <h3 className="architect-title">Principals & Directors</h3>
+              <p className="architect-description">
+                Visionary leaders shaping teaching practices with proven school
+                leadership experience
+              </p>
             </div>
-          ))}
-        </div>
-      )}
+
+            <div className="architect-category">
+              <div className="architect-icon">
+                <img src="/program-svg/experts.svg" alt="Subject Experts" />
+              </div>
+              <h3 className="architect-title">Subject Experts</h3>
+              <p className="architect-description">
+                Specialists who bring clarity, depth, and mastery across
+                disciplines
+              </p>
+            </div>
+
+            <div className="architect-category">
+              <div className="architect-icon">
+                <img src="/program-svg/solutions.svg" alt="Innovators" />
+              </div>
+              <h3 className="architect-title">Innovators</h3>
+              <p className="architect-description">
+                Educators introducing future-ready methods that keep learning
+                relevant
+              </p>
+            </div>
+
+            <div className="architect-category">
+              <div className="architect-icon">
+                <img src="/program-svg/mentoring.svg" alt="Mentors" />
+              </div>
+              <h3 className="architect-title">Mentors</h3>
+              <p className="architect-description">
+                Guides who close skill gaps and build teacher confidence with
+                practical tools
+              </p>
+            </div>
+
+            <div className="architect-category">
+              <div className="architect-icon">
+                <img
+                  src="/program-svg/team-leader.svg"
+                  alt="Impact-Driven Leaders"
+                />
+              </div>
+              <h3 className="architect-title">Impact-Driven Leaders</h3>
+              <p className="architect-description">
+                Committed to ensuring measurable improvements in classroom
+                outcomes
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
     </section>
   );
 };

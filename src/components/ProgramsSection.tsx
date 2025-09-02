@@ -9,6 +9,7 @@ import thumb2 from "../images/NTT_Nitya-Reels-02.png";
 import thumb3 from "../images/NTT_Nitya-Reels-03.jpg";
 
 import Link from "next/link";
+import MuxPlayer from "@mux/mux-player-react";
 
 const videos = [
   {
@@ -27,7 +28,6 @@ const videos = [
     thumbnail: thumb2.src,
     alt: "Teacher using technology in classroom",
     videoUrl:
-      
       "https://cdn.shopify.com/videos/c/o/v/71b3a8675ca14de0abbcf94e5b901c31.mp4",
   },
 ];
@@ -106,97 +106,47 @@ const ProgramsSection = () => {
             </h2>
             <p className="programs-description">
               NITYA ensures training isn&apos;t just a one-time session but a
-              continuous learning journey. Our programs are designed by educators,
-              for educators—ensuring practical, classroom-ready solutions.
+              continuous learning journey. Our programs are designed by
+              educators, for educators ensuring practical, classroom-ready
+              solutions.
             </p>
           </div>
         </div>
 
-        {/* Video Section */}
-        {isMobile ? (
-          // Mobile View: Slider
-          <div className="programs-video-slider"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            {videos.map((video, index) => (
-              <div
-                key={index}
-                className={`programs-slide ${
-                  index === currentSlide ? "programs-slide--active" : ""
-                }`}
-                onClick={() => handleVideoClick(video.videoUrl)}
-              >
-                <div className="programs-video-wrapper">
-                  <video className="programs-video" poster={video.thumbnail}>
-                    <source src={video.videoUrl} type="video/mp4" />
-                  </video>
-                  <div className="programs-play-overlay">
-                    <Play size={48} className="programs-play-icon" />
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            <div className="programs-slide-controls">
-              {videos.map((_, index) => (
-                <div
-                  key={index}
-                  className={`programs-slide-dot ${
-                    index === currentSlide ? "programs-slide-dot--active" : ""
-                  }`}
-                  onClick={() => handleDotClick(index)}
-                />
-              ))}
-            </div>
+        {/* Video section */}
+        <div className="flex justify-center">
+          <div className="aspect-video md:w-3/4 rounded-lg md:rounded-2xl overflow-hidden">
+            <MuxPlayer
+              playbackId="ouJnmHfQxmoz1rHC3HtKLxy01GS5c9VcL9iuzeh00dLkw"
+              accentColor="var(--primary-green)"
+              poster="./video-cover.png"
+            />
           </div>
-        ) : (
-          // Desktop View: Grid
-          <div className="programs-video-grid">
-            {videos.map((video, index) => (
-              <div
-                key={index}
-                className="programs-grid-item"
-                onClick={() => handleVideoClick(video.videoUrl)}
-              >
-                <div className="programs-video-wrapper">
-                  <video className="programs-video" poster={video.thumbnail}>
-                    <source src={video.videoUrl} type="video/mp4" />
-                  </video>
-                  <div className="programs-play-overlay">
-                    <Play size={48} className="programs-play-icon" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+        </div>
       </div>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <div className="flex justify-center items-center mx-auto w-full">
-      <Link href="#about" className="programs-button button">
-      Download Brochure
-      <div>
-        <svg
-          width="21"
-          height="20"
-          viewBox="0 0 21 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="hero-arrow-icon"
-        >
-          <path
-            d="M7.16699 4.48787C10.3887 8.40133 16.2738 6.92804 16.2738 6.92804M16.2738 6.92804C16.2738 6.92804 12.0553 11.2881 13.8337 16.0349M16.2738 6.92804L4.7585 13.6496"
-            stroke="white"
-            strokeLinejoin="bevel"
-          />
-        </svg>
+        <Link href="#about" className="programs-button button">
+          Download Brochure
+          <div>
+            <svg
+              width="21"
+              height="20"
+              viewBox="0 0 21 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="hero-arrow-icon"
+            >
+              <path
+                d="M7.16699 4.48787C10.3887 8.40133 16.2738 6.92804 16.2738 6.92804M16.2738 6.92804C16.2738 6.92804 12.0553 11.2881 13.8337 16.0349M16.2738 6.92804L4.7585 13.6496"
+                stroke="white"
+                strokeLinejoin="bevel"
+              />
+            </svg>
+          </div>
+        </Link>
       </div>
-      </Link>
-      </div>
-      
 
       {/* Video Modal */}
       <VideoModal
