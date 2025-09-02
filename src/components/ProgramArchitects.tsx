@@ -36,6 +36,7 @@ const architects = [
 
 const ProgramArchitects = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -61,6 +62,11 @@ const ProgramArchitects = () => {
     return () => clearInterval(interval);
   }, [emblaApi, isMobile]);
 
+  const descriptionText =
+    "At NITYA, our programs are crafted and led by a team of expert educators who understand the realities of today's classrooms. With backgrounds as principals, directors, subject specialists, and educational leaders, they bring both deep expertise and practical strategies to empower teachers and drive lasting impact.";
+
+  const truncatedText = descriptionText.substring(0, 150) + "...";
+
   return (
     <section
       className={
@@ -85,13 +91,23 @@ const ProgramArchitects = () => {
         >
           Program Architects
         </h2>
-        <p className="text-pretty">
-          At NITYA, our programs are crafted and led by a team of expert
-          educators who understand the realities of today's classrooms. With
-          backgrounds as principals, directors, subject specialists, and
-          educational leaders, they bring both deep expertise and practical
-          strategies to empower teachers and drive lasting impact.
-        </p>
+        <div className="description-container">
+          <p className="text-pretty">
+            {isMobile
+              ? isExpanded
+                ? descriptionText
+                : truncatedText
+              : descriptionText}
+            {isMobile && (
+              <button
+                className="read-more-btn"
+                onClick={() => setIsExpanded(!isExpanded)}
+              >
+                {isExpanded ? "Read Less" : "Read More"}
+              </button>
+            )}
+          </p>
+        </div>
 
         {isMobile ? (
           <div className="architects-carousel-wrapper">

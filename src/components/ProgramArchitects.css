@@ -4,7 +4,7 @@
   text-align: center;
   padding: 4rem 0 8rem 0;
   overflow: hidden;
-  min-height: 80vh;
+  min-height: auto;
 }
 
 .program-architects-section::before {
@@ -32,13 +32,45 @@
   margin-bottom: 3rem;
 }
 
+/* Description container and read more button styles */
+.description-container {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.description-container p {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  display: inline;
+}
+
+.read-more-btn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  margin-left: 0.25rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: inline;
+}
+
+.read-more-btn:hover {
+  color: white;
+}
+
 /* Architect Categories Grid */
 .architects-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 1rem 0 0 0;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -316,7 +348,7 @@
 
   /* Mobile carousel styles */
   .architects-carousel-wrapper {
-    margin: 2rem 0;
+    margin: 1rem 0 0 0;
   }
 
   .embla {
@@ -396,9 +428,9 @@
   background: linear-gradient(180deg, #0a4b9b 0%, #1b366b 100%);
   color: white;
   text-align: center;
-  padding: 8rem 0;
+  padding: 6rem 0 6rem 0;
   overflow: hidden;
-  min-height: 80vh;
+  min-height: auto;
   z-index: -1;
   margin-top: -4rem;
 }
@@ -516,12 +548,22 @@
 
 @media (max-width: 768px) {
   .program-architects-mobile-section {
-    padding: 4rem 0;
+    padding: 4rem 0 4rem 0;
     z-index: 0;
     margin-top: 0;
   }
   .program-architects-mobile-title {
     font-size: 2rem;
+  }
+
+  .description-container p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .read-more-btn {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
   }
 
   .program-architects-mobile-cards {
