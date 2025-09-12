@@ -7,7 +7,7 @@ import butterfly from "../images/Butterfly.svg";
 import direction from "../images/Direction.svg";
 import subtract from "../images/subtract-green.svg";
 import depth from "../images/Depth.svg";
-import logo from "../images/nitya-logo.png";
+import logo from "../images/nitya-logo2.png";
 
 const FeaturesSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

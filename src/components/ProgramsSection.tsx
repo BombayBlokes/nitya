@@ -119,7 +119,7 @@ const ProgramsSection = () => {
             <MuxPlayer
               playbackId="ouJnmHfQxmoz1rHC3HtKLxy01GS5c9VcL9iuzeh00dLkw"
               accentColor="var(--primary-green)"
-              poster="./video-cover.png"
+              poster="./video-cover2.jpg"
               className="rounded-lg md:rounded-2xl overflow-hidden"
             />
           </div>

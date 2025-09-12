@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import subtract from "../images/subtract.png";
 import { supabase } from "@/lib/supabase";
-import logo from "@/images/nitya-logo-1.png";
+import logo from "@/images/nitya-logo-3.png";
 import CustomAlert from "./CustomAlert";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -121,16 +121,16 @@ const AboutSection = () => {
   };
 
   const handleDownloadBrochure = () => {
-    const brochureUrl =
-      "https://cdn.shopify.com/s/files/1/0570/2415/1758/files/NITYA_Brochure_27.3.25_3_1.pdf?v=1746013824";
-    const link = document.createElement("a");
-    link.href = brochureUrl;
-    link.setAttribute("download", "NITYA_Brochure.pdf");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setShowAlert(false);
-  };
+  const brochureUrl = "/pdf/NITYA Brochure_compressed.pdf";
+  const link = document.createElement("a");
+  link.href = brochureUrl;
+  link.setAttribute("download", "NITYA_Brochure.pdf");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  setShowAlert(false);
+};
+
 
   const handleCloseAlert = () => {
     setShowAlert(false);

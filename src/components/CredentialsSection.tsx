@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import "./CredentialsSection.css";
-import certificateImg from "@/images/certificate-new.png";
+import certificateImg from "@/images/certificate-new2.png";
 
 const CredentialsSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, X } from "lucide-react";
 import "./Header.css";
 import { useState } from "react";
-import logo from "../images/nitya-logo-white.png";
+import logo from "../images/nitya-logo-white2.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ const Header = () => {
         <Link href="/" className="logo">
           <Image
             width={123}
-            height={69}
+            height={100}
             src={logo}
             alt="Nitya Logo"
             style={{ objectFit: "contain" }}

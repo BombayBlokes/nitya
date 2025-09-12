@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./Footer.css";
-import logo from "@/images/nitya-logo-1.png";
+import logo from "@/images/nitya-logo-3.png";
 import navneet from "../images/navneet-logo.png";
 
 const Footer = () => {
