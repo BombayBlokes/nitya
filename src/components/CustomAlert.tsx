@@ -22,11 +22,13 @@ const CustomAlert: React.FC<CustomAlertProps> = ({ isOpen, onClose, onDownload }
           <h3>Thank You for Connecting with NITYA!</h3>
           <p className="message-primary">You&apos;ve taken the first step towards upskilling and unlocking new opportunities.</p>
           <p className="message-secondary">Our team will reach out to you soon.</p>
-          <div className="custom-alert-buttons">
-            <button onClick={onDownload} className="custom-alert-button ">
-              Download Brochure
-            </button>
-          </div>
+          <div className="custom-alert-buttons"> 
+  <button onClick={onDownload} className="custom-alert-button">
+    Download Brochure
+    <img src="/favicons/download.svg" alt="Download Icon" className="download-icon" />
+  </button>
+</div>
+
         </div>
       </div>
     </div>
