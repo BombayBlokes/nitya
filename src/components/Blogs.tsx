@@ -44,7 +44,7 @@ const Blogs: React.FC = () => {
     <section className="blogs-section">
       <h2>Blogs</h2>
       <p className="blogs-description">
-        Explore our latest articles and insights on web development, design, and programming.
+        Explore Our Latest Articles on Upskilling Educators and Teacher Training
       </p>
 
       <div className="blogs-grid">
@@ -59,7 +59,7 @@ const Blogs: React.FC = () => {
             <p className="blog-desc">{blog.description}</p>
             
             <a
-  href="https://navneettoptech.com/blog?e-filter-4ee62cb-category=insights"
+  href="https://navneettoptech.com/blog?e-filter-4ee62cb-category=nitya"
   target="_blank"
   rel="noopener noreferrer"
   className="read-more-button"
