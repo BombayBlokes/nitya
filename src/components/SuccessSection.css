@@ -1,9 +1,8 @@
 .success-section {
-  padding: 0 0 6rem 0;
+   padding: 0 0 6rem 0;
     background: #fff;
     overflow: hidden;
     position: relative;
-    border-radius: 0 0 90px 90px;
 }
 
 .success-container {
@@ -235,8 +234,8 @@
 
 @media (max-width: 768px) {
   .success-section {
-    padding: 0 0 3rem 0;
-    border-radius: 0 0 30px 30px;
+    padding: 3rem 0 3rem 0;
+    /* border-radius: 0 0 30px 30px; */
   }
   .success-title {
     font-size: 1.5rem;

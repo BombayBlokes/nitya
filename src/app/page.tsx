@@ -13,6 +13,7 @@ import ProgramArchitects from "@/components/ProgramArchitects";
 import GallerySection from "@/components/GallerySection";
 import FAQSection from "@/components/FAQSection";
 import CredentialsSection from "@/components/CredentialsSection";
+import Blogs from "@/components/Blogs";
 
 export default function Home() {
   const stepsData = [
@@ -65,6 +66,9 @@ export default function Home() {
         <div id="success-stories">
           <SuccessSection />
         </div>
+        <Blogs />
+
+
         <div id="contact"></div>
       </main>
       {/* <CallToAction /> */}
