@@ -62,7 +62,7 @@ const Blogs: React.FC = () => {
   href="https://navneettoptech.com/blog?e-filter-4ee62cb-category=insights"
   target="_blank"
   rel="noopener noreferrer"
-  className="read-more-btn"
+  className="read-more-button"
 >
   Read More
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
