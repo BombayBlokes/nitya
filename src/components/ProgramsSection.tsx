@@ -117,16 +117,20 @@ const ProgramsSection = () => {
         <div className="flex justify-center">
           <div className="aspect-video md:w-3/4">
             <MuxPlayer
-              playbackId="ouJnmHfQxmoz1rHC3HtKLxy01GS5c9VcL9iuzeh00dLkw"
+              playbackId="vlnvNCueFWnf00D025UTlVFP01q7FoOIS1npJosVxQc3vU"
               accentColor="var(--primary-green)"
-              poster="./video-cover2.jpg"
+              poster="/video-cover2.jpg"
+              muted
+              playsInline
               className="rounded-lg md:rounded-2xl overflow-hidden"
             />
           </div>
         </div>
       </div>
+
       <br />
       <br />
+
       <div className="flex justify-center items-center mx-auto w-full">
         <Link href="#about" className="programs-button button">
           Download Brochure
@@ -149,7 +153,6 @@ const ProgramsSection = () => {
         </Link>
       </div>
 
-      {/* Video Modal */}
       <VideoModal
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
