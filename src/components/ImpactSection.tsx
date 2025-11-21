@@ -39,12 +39,16 @@ const ImpactSection = () => {
     <section className="impact-section">
       <div className="impact-container">
         <div className="impact-image-container">
-          <Image
-            src={impactImage}
-            alt="Teacher leading a collaborative session"
-            
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/fz1b3zseREI"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
             className="impact-image"
-            
+            style={{ aspectRatio: '16/9' }}
           />
         </div>
 

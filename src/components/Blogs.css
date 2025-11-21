@@ -182,5 +182,63 @@ line-height: normal;
   scrollbar-width: none;
 }
 
+/* Skeleton loader styles */
+.skeleton-card {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 32px;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-text {
+  height: 16px;
+  border-radius: 4px;
+}
+
+.skeleton-title {
+  height: 24px;
+  width: 80%;
+  margin: 0.75rem 0;
+}
+
+.skeleton-desc {
+  height: 20px;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.skeleton-desc:last-of-type {
+  width: 70%;
+}
+
+.skeleton-button {
+  height: 48px;
+  width: 100%;
+  margin-top: auto;
+  border-radius: 100px;
+}
+
+
+
 
 
