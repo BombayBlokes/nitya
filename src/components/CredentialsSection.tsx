@@ -35,6 +35,14 @@ const CredentialsSection = () => {
             Successfully complete all modules and earn your advanced certificate
             by Navneet Education Limited.
           </p>
+          
+          {/* CTA Button */}
+          <div className="credentials-content-cta">
+            <Link href="#form-get-in-touch" className="button">
+              Level up with your certificate
+              <ArrowRight className="arrow-icon" />
+            </Link>
+          </div>
         </div>
         <div className="credentials-image" onClick={openModal}>
           <Image
@@ -65,14 +73,6 @@ const CredentialsSection = () => {
           </div>
         </div>
       )}
-
-      {/* CTA Section */}
-      <div className="credentials-cta-section">
-        <Link href="#form-get-in-touch" className="button">
-          Level up with your certificate
-          <ArrowRight className="arrow-icon" />
-        </Link>
-      </div>
     </section>
   );
 };
