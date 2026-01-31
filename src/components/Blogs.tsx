@@ -6,11 +6,13 @@ import './Blogs.css';
 const Blogs: React.FC = () => {
   const [blogs, setBlogs] = useState<any[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [loading, setLoading] = useState(true);
   const blogsPerPage = 3;
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
+        setLoading(true);
         const res = await fetch('https://navneettoptech.com/wp-json/wp/v2/posts?categories=48&_embed');
         const data = await res.json();
 
@@ -26,6 +28,8 @@ const Blogs: React.FC = () => {
         setBlogs(formattedBlogs);
       } catch (error) {
         console.error('Error fetching blogs:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -40,15 +44,36 @@ const Blogs: React.FC = () => {
   const startIdx = currentPage * blogsPerPage;
   const currentBlogs = blogs.slice(startIdx, startIdx + blogsPerPage);
 
+  const SkeletonCard = () => (
+    <div className="blog-card skeleton-card">
+      <div className="skeleton skeleton-image"></div>
+      <div className="blog-meta">
+        <div className="skeleton skeleton-text" style={{ width: '120px' }}></div>
+        <div className="skeleton skeleton-text" style={{ width: '80px' }}></div>
+      </div>
+      <div className="skeleton skeleton-title"></div>
+      <div className="skeleton skeleton-desc"></div>
+      <div className="skeleton skeleton-desc"></div>
+      <div className="skeleton skeleton-button"></div>
+    </div>
+  );
+
   return (
-    <section className="blogs-section">
+    <section className="blogs-section" id="blogs">
       <h2>Blogs</h2>
       <p className="blogs-description">
         Explore Our Latest Articles on Upskilling Educators and Teacher Training
       </p>
 
       <div className="blogs-grid">
-        {currentBlogs.map((blog, index) => (
+        {loading ? (
+          <>
+            <SkeletonCard />
+            <SkeletonCard />
+            <SkeletonCard />
+          </>
+        ) : (
+          currentBlogs.map((blog, index) => (
           <div className="blog-card" key={index}>
             <img src={blog.imageUrl} alt="Blog" className="blog-image" />
             <div className="blog-meta">
@@ -71,10 +96,12 @@ const Blogs: React.FC = () => {
 </a>
 
           </div>
-        ))}
+          ))
+        )}
       </div>
 
-      <div className="pagination">
+      {!loading && totalPages > 1 && (
+        <div className="pagination">
         {Array.from({ length: totalPages }, (_, i) => (
           <button
             key={i}
@@ -84,7 +111,8 @@ const Blogs: React.FC = () => {
             {i + 1}
           </button>
         ))}
-      </div>
+        </div>
+      )}
     </section>
   );
 };

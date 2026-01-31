@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import "./CredentialsSection.css";
 import certificateImg from "@/images/certificate-new2.png";
 
@@ -30,9 +32,17 @@ const CredentialsSection = () => {
             your commitment to professional growth.
           </p>
           <p className="credentials-detail">
-            Successfully complete all modules and earn your advanced
-            certificate by Navneet Education Limited.
+            Successfully complete all modules and earn your advanced certificate
+            by Navneet Education Limited.
           </p>
+          
+          {/* CTA Button */}
+          <div className="credentials-content-cta">
+            <Link href="#form-get-in-touch" className="button">
+              Level up with your certificate
+              <ArrowRight className="arrow-icon" />
+            </Link>
+          </div>
         </div>
         <div className="credentials-image" onClick={openModal}>
           <Image

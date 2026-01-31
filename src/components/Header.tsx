@@ -42,6 +42,9 @@ const Header = () => {
           <Link href="#success-stories" className="nav-link">
             Success Stories
           </Link>
+          <Link href="#blogs" className="nav-link">
+            Blogs
+          </Link>
           <Link href="#contact" className="nav-link">
             Contact
           </Link>
@@ -112,6 +115,9 @@ const Header = () => {
           onClick={toggleMenu}
         >
           Success Stories
+        </Link>
+        <Link href="#blogs" className="mobile-nav-link" onClick={toggleMenu}>
+          Blogs
         </Link>
         <Link href="#contact" className="mobile-nav-link" onClick={toggleMenu}>
           Contact

@@ -68,7 +68,6 @@ export default function Home() {
         </div>
         <Blogs />
 
-
         <div id="contact"></div>
       </main>
       {/* <CallToAction /> */}
