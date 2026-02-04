@@ -4,6 +4,7 @@ import { Philosopher, Montserrat } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import SeoSchemas from "@/components/SeoSchemas";
 import "./globals.css";
 import Script from "next/script";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
 
       <body>
         <GoogleAnalytics />
+        <SeoSchemas />
         <Header />
         <main>{children}</main>
         <Footer />
