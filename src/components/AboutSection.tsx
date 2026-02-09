@@ -227,10 +227,7 @@ const AboutSection = () => {
             />
           </h2>
           <p className="about-description">
-            NITYA ensures that when teachers feel supported, they inspire
-            students to thrive. By equipping educators with modern teaching
-            strategies and technology, NITYA fosters a dynamic learning
-            environment.
+            NITYA ensures that when teachers feel supported, they inspire students to thrive. Designed as a structured teacher training program, NITYA empowers educators with modern teaching strategies, classroom-ready methodologies, and the effective use of technology. Through well-designed learning experiences and continuous professional development, NITYA helps schools build confident, skilled teachers who create engaging and impactful classrooms aligned with today’s educational needs.
           </p>
 
           <h3 className="about-development-title ">

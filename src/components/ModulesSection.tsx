@@ -1228,9 +1228,7 @@ const ModulesSection = () => {
         <div className="modules-header">
           <h2 className="modules-title">Educator Growth Modules</h2>
           <p className="modules-description">
-            NITYA offers a diverse range of educator training programs designed
-            to enhance teaching effectiveness and student engagement. Each
-            module is crafted to address real classroom challenges.
+            NITYA offers a diverse range of educator training programs designed to enhance teaching effectiveness and student engagement. Each module is crafted to address real classroom challenges and supports continuous professional development through customized, in-person training programs conducted on a request basis.
           </p>
         </div>
 

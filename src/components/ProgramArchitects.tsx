@@ -63,7 +63,7 @@ const ProgramArchitects = () => {
   }, [emblaApi, isMobile]);
 
   const descriptionText =
-    "At NITYA, our programs are crafted and led by a team of expert educators who understand the realities of today's classrooms. With backgrounds as principals, directors, subject specialists, and educational leaders, they bring both deep expertise and practical strategies to empower teachers and drive lasting impact.";
+    "At NITYA, our programs are crafted and led by a team of expert educators who understand the realities of today’s classrooms. With backgrounds as principals, directors, subject specialists, and educational leaders, they bring both deep expertise and practical strategies to empower teachers through impactful teacher workshops and drive lasting impact.";
 
   const truncatedText = descriptionText.substring(0, 150) + "...";
 

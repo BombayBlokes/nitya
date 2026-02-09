@@ -25,8 +25,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "NITYA Teacher Training Program",
-  description: "Empowering educators with impactful learning opportunities",
+  title: "Teacher Training Program for School Teachers | NITYA Training",
+  description: "Nitya Training offers a structured teacher training program with certified workshops and online learning to support professional development for school teachers.",
 };
 
 export default function RootLayout({

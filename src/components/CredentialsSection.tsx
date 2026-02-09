@@ -47,7 +47,7 @@ const CredentialsSection = () => {
         <div className="credentials-image" onClick={openModal}>
           <Image
             src={certificateImg}
-            alt="NITYA Certification"
+            alt="Teacher Training Certificate"
             width={500}
             height={350}
             className="certificate-img"
@@ -64,7 +64,7 @@ const CredentialsSection = () => {
             </button>
             <Image
               src={certificateImg}
-              alt="NITYA Certification"
+              alt="Teacher Training Certificate"
               width={1000}
               height={700}
               className="modal-image"

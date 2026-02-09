@@ -10,19 +10,19 @@ const FAQSection = () => {
   const faqs = [
     {
       question: "What is the NITYA Teacher Training Program?",
-      answer: "NITYA is a comprehensive professional development program designed to enhance teaching effectiveness through modern pedagogical approaches, classroom management techniques, and innovative teaching methodologies."
+      answer: "NITYA is a structured teacher training program focused on modern pedagogy, classroom management, and innovative teaching practices. This CBSE training initiative helps educators enhance teaching effectiveness through practical learning."
     },
     {
       question: "Who can enroll in the NITYA program?",
-      answer: "The program is open to all educators, including teachers, coordinators, vice principals, and principals from schools across India. Both experienced and new educators can benefit from the program."
+      answer: "The program is open to teachers, coordinators, and school leaders across India. Both new and experienced educators can benefit from this in-person workshop for teachers, designed to address real classroom needs."
     },
     {
       question: "What are the program modules and duration?",
-      answer: "The program consists of 11 comprehensive modules covering various aspects of teaching and learning. Each module typically spans 1-2 days with 6-12 hours of training, depending on the topic."
+      answer: "NITYA includes 11 modules, each spanning 1–2 days with 6–12 hours of learning. The modules are delivered through focused teachers workshops and structured training teacher sessions."
     },
     {
       question: "How is the program delivered?",
-      answer: "The program is delivered through a combination of interactive workshops, hands-on activities, and practical demonstrations. Sessions are conducted by experienced educators and subject matter experts."
+      answer: "The program is delivered through interactive teacher workshops led by experienced educators. Participants receive a recognized teacher training certificate course upon completion."
     },
     {
       question: "What certification will I receive?",

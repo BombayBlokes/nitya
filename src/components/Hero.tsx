@@ -183,7 +183,7 @@ const Hero = () => {
                 <div className="hero-image-container">
                   <Image
                     src={teacher}
-                    alt="Teacher"
+                    alt="Teacher Training"
                     width={393}
                     height={509}
                     loading="eager"
