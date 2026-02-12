@@ -7,9 +7,15 @@ import "./ProgramsSection.css";
 import thumb1 from "../images/NTT_Nitya-Reels-01_Thumbnail.png";
 import thumb2 from "../images/NTT_Nitya-Reels-02.png";
 import thumb3 from "../images/NTT_Nitya-Reels-03.jpg";
-
 import Link from "next/link";
-import MuxPlayer from "@mux/mux-player-react";
+import dynamic from "next/dynamic";
+
+const MuxPlayer = dynamic(() => import("@mux/mux-player-react"), {
+  ssr: false,
+  loading: () => (
+    <div className="aspect-video md:w-3/4 rounded-lg md:rounded-2xl bg-gray-200 animate-pulse" />
+  ),
+});
 
 const videos = [
   {
@@ -119,7 +125,7 @@ const ProgramsSection = () => {
             <MuxPlayer
               playbackId="vlnvNCueFWnf00D025UTlVFP01q7FoOIS1npJosVxQc3vU"
               accentColor="var(--primary-green)"
-              poster="/video-cover2.jpg"
+              poster="video-cover3.webp"
               muted
               playsInline
               className="rounded-lg md:rounded-2xl overflow-hidden"

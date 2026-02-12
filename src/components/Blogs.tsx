@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './Blogs.css';
+import Image from "next/image";
 
 const Blogs: React.FC = () => {
   const [blogs, setBlogs] = useState<any[]>([]);
@@ -75,7 +76,14 @@ const Blogs: React.FC = () => {
         ) : (
           currentBlogs.map((blog, index) => (
           <div className="blog-card" key={index}>
-            <img src={blog.imageUrl} alt="Blog" className="blog-image" />
+           <Image
+  src={blog.imageUrl}
+  alt="Blog"
+  width={600}
+  height={350}
+  className="blog-image"
+  priority={false}
+/>
             <div className="blog-meta">
               <span>{blog.date}</span>
               <span>{blog.readTime}</span>

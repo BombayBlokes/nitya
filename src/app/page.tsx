@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ProgramsSection from "@/components/ProgramsSection";
@@ -14,6 +15,7 @@ import GallerySection from "@/components/GallerySection";
 import FAQSection from "@/components/FAQSection";
 import CredentialsSection from "@/components/CredentialsSection";
 import Blogs from "@/components/Blogs";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const stepsData = [
@@ -44,6 +46,9 @@ export default function Home() {
   return (
     <>
       <main>
+        <Header />
+    
+     
         <Hero />
 
         <AboutSection />
@@ -69,6 +74,10 @@ export default function Home() {
         <Blogs />
 
         <div id="contact"></div>
+
+
+
+           <Footer />
       </main>
       {/* <CallToAction /> */}
     </>

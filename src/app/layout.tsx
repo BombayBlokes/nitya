@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Philosopher, Montserrat } from "next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SeoSchemas from "@/components/SeoSchemas";
 import "./globals.css";
@@ -49,9 +47,9 @@ export default function RootLayout({
       <body>
         <GoogleAnalytics />
         <SeoSchemas />
-        <Header />
+
         <main>{children}</main>
-        <Footer />
+
         <Script
           type="text/javascript"
           src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"

@@ -19,7 +19,7 @@ const Header = () => {
       <header className="header">
         <Link href="/" className="logo">
           <Image
-            width={123}
+            width={117}
             height={100}
             src={logo}
             alt="Nitya Logo"

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import "./GallerySection.css";
+import Image from "next/image";
 
 const galleryImages = [
   {
@@ -121,12 +122,15 @@ const GallerySection = () => {
               {galleryImages.map((image, index) => (
                 <div key={index} className="embla__slide">
                   <div className="gallery-image-wrapper">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="gallery-image"
-                      loading="lazy"
-                    />
+                    <Image
+  src={image.src}
+  alt={image.alt}
+  width={600}
+  height={400}
+  className="gallery-image"
+  loading="lazy"
+/>
+
                     {/* <div className="gallery-overlay">
                       <div className="gallery-caption">
                         <h3>Gallery Image {index + 1}</h3>

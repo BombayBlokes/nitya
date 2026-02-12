@@ -35,7 +35,7 @@ line-height: normal;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
   max-width: 424px;
   width: 400px; /* Fix card width */
-  height: 480px; /* Fix card height */
+  height: 460px; /* Fix card height */
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -88,7 +88,7 @@ line-height: normal;
   /* Multi-line truncation */
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Show max 3 lines */
+  -webkit-line-clamp: 2; /* Show max 3 lines */
   -webkit-box-orient: vertical;
 }
 

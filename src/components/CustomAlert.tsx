@@ -1,6 +1,7 @@
 import React from "react";
 import { X } from "lucide-react";
 import "./CustomAlert.css";
+import Image from "next/image";
 
 interface CustomAlertProps {
   isOpen: boolean;
@@ -25,7 +26,14 @@ const CustomAlert: React.FC<CustomAlertProps> = ({ isOpen, onClose, onDownload }
           <div className="custom-alert-buttons"> 
   <button onClick={onDownload} className="custom-alert-button">
     Download Brochure
-    <img src="/favicons/download.svg" alt="Download Icon" className="download-icon" />
+   <Image
+  src="/favicons/download.svg"
+  alt="Download Icon"
+  width={20}
+  height={20}
+  className="download-icon"
+/>
+
   </button>
 </div>
 

@@ -193,7 +193,7 @@ const SuccessSection = () => {
         <div 
           className="success-testimonial-wrapper"
           onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
+          onTouchMove={handleTouchMove} 
           onTouchEnd={handleTouchEnd}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}

@@ -7,36 +7,10 @@ import useEmblaCarousel from "embla-carousel-react";
 import prodipta from "../images/prodipta.png";
 import archana from "../images/archana.png";
 
-const architects = [
-  {
-    name: "Prodipta Hore",
-    title: "Program Director & Founding Member - ABEA",
-    experience: "30+ Years",
-    description: [
-      "Robotics Advocate",
-      "Advocate of creativity in math education and robotics",
-      "John Templeton Fellow on Gifted Education, University of Iowa",
-      "Co-author of CBSE Math Text Book by NCERT",
-      "Coordinator International Initiatives and Head of Faculty - Mathematics at Aditya Birla World Academy",
-    ],
-    image: prodipta,
-  },
-  {
-    name: "Archana Awade",
-    title: "General Manager - Curriculum & Training at ABEA",
-    experience: "25+ Years",
-    description: [
-      "Expert in CBSE, ICSE, IB & IGCSE institutional design",
-      "Certified Trainer & IGCSE Specialist",
-      "Lead auditor for chain of schools",
-    ],
-    image: archana,
-  },
-];
-
 const ProgramArchitects = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -47,7 +21,7 @@ const ProgramArchitects = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    handleResize(); // Check on first render
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -91,6 +65,7 @@ const ProgramArchitects = () => {
         >
           Program Architects
         </h2>
+
         <div className="description-container">
           <p className="text-pretty">
             {isMobile
@@ -98,6 +73,7 @@ const ProgramArchitects = () => {
                 ? descriptionText
                 : truncatedText
               : descriptionText}
+
             {isMobile && (
               <button
                 className="read-more-btn"
@@ -116,9 +92,11 @@ const ProgramArchitects = () => {
                 <div className="embla__slide">
                   <div className="architect-category">
                     <div className="architect-icon">
-                      <img
+                      <Image
                         src="/program-svg/team.svg"
                         alt="Principals & Directors"
+                        width={50}
+                        height={50}
                       />
                     </div>
                     <h3 className="architect-title">Principals & Directors</h3>
@@ -132,9 +110,11 @@ const ProgramArchitects = () => {
                 <div className="embla__slide">
                   <div className="architect-category">
                     <div className="architect-icon">
-                      <img
+                      <Image
                         src="/program-svg/experts.svg"
                         alt="Subject Experts"
+                        width={50}
+                        height={50}
                       />
                     </div>
                     <h3 className="architect-title">Subject Experts</h3>
@@ -148,7 +128,12 @@ const ProgramArchitects = () => {
                 <div className="embla__slide">
                   <div className="architect-category">
                     <div className="architect-icon">
-                      <img src="/program-svg/solutions.svg" alt="Innovators" />
+                      <Image
+                        src="/program-svg/solutions.svg"
+                        alt="Innovators"
+                        width={50}
+                        height={50}
+                      />
                     </div>
                     <h3 className="architect-title">Innovators</h3>
                     <p className="architect-description">
@@ -161,7 +146,12 @@ const ProgramArchitects = () => {
                 <div className="embla__slide">
                   <div className="architect-category">
                     <div className="architect-icon">
-                      <img src="/program-svg/mentoring.svg" alt="Mentors" />
+                      <Image
+                        src="/program-svg/mentoring.svg"
+                        alt="Mentors"
+                        width={50}
+                        height={50}
+                      />
                     </div>
                     <h3 className="architect-title">Mentors</h3>
                     <p className="architect-description">
@@ -174,12 +164,16 @@ const ProgramArchitects = () => {
                 <div className="embla__slide">
                   <div className="architect-category">
                     <div className="architect-icon">
-                      <img
+                      <Image
                         src="/program-svg/team-leader.svg"
                         alt="Impact-Driven Leaders"
+                        width={50}
+                        height={50}
                       />
                     </div>
-                    <h3 className="architect-title">Impact-Driven Leaders</h3>
+                    <h3 className="architect-title">
+                      Impact-Driven Leaders
+                    </h3>
                     <p className="architect-description">
                       Committed to ensuring measurable improvements in classroom
                       outcomes
@@ -193,7 +187,12 @@ const ProgramArchitects = () => {
           <div className="architects-grid">
             <div className="architect-category">
               <div className="architect-icon">
-                <img src="/program-svg/team.svg" alt="Principals & Directors" />
+                <Image
+                  src="/program-svg/team.svg"
+                  alt="Principals & Directors"
+                  width={50}
+                  height={50}
+                />
               </div>
               <h3 className="architect-title">Principals & Directors</h3>
               <p className="architect-description">
@@ -204,7 +203,12 @@ const ProgramArchitects = () => {
 
             <div className="architect-category">
               <div className="architect-icon">
-                <img src="/program-svg/experts.svg" alt="Subject Experts" />
+                <Image
+                  src="/program-svg/experts.svg"
+                  alt="Subject Experts"
+                  width={50}
+                  height={50}
+                />
               </div>
               <h3 className="architect-title">Subject Experts</h3>
               <p className="architect-description">
@@ -215,7 +219,12 @@ const ProgramArchitects = () => {
 
             <div className="architect-category">
               <div className="architect-icon">
-                <img src="/program-svg/solutions.svg" alt="Innovators" />
+                <Image
+                  src="/program-svg/solutions.svg"
+                  alt="Innovators"
+                  width={50}
+                  height={50}
+                />
               </div>
               <h3 className="architect-title">Innovators</h3>
               <p className="architect-description">
@@ -226,7 +235,12 @@ const ProgramArchitects = () => {
 
             <div className="architect-category">
               <div className="architect-icon">
-                <img src="/program-svg/mentoring.svg" alt="Mentors" />
+                <Image
+                  src="/program-svg/mentoring.svg"
+                  alt="Mentors"
+                  width={50}
+                  height={50}
+                />
               </div>
               <h3 className="architect-title">Mentors</h3>
               <p className="architect-description">
@@ -237,9 +251,11 @@ const ProgramArchitects = () => {
 
             <div className="architect-category">
               <div className="architect-icon">
-                <img
+                <Image
                   src="/program-svg/team-leader.svg"
                   alt="Impact-Driven Leaders"
+                  width={50}
+                  height={50}
                 />
               </div>
               <h3 className="architect-title">Impact-Driven Leaders</h3>
