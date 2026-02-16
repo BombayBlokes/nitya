@@ -122,7 +122,7 @@ const Hero = () => {
                       width={120}
                       height={48}
                       style={{ objectFit: "contain" }}
-                      priority
+                     
                       sizes="160px"
                     />
                   </Link>
@@ -252,7 +252,7 @@ const Hero = () => {
                       width={160}
                       height={48}
                       style={{ objectFit: "contain" }}
-                      priority
+                     
                       sizes="160px"
                     />
                   </Link> */}
@@ -267,7 +267,7 @@ const Hero = () => {
                       width={160}
                       height={48}
                       style={{ objectFit: "contain" }}
-                      priority
+                      
                       sizes="160px"
                     />
                   </Link>

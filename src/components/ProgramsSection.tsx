@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Play } from "lucide-react";
+import Script from "next/script";
 import VideoModal from "./VideoModal";
 import "./ProgramsSection.css";
 import thumb1 from "../images/NTT_Nitya-Reels-01_Thumbnail.png";
@@ -105,6 +106,10 @@ const ProgramsSection = () => {
   return (
     <section className="programs-section">
       <div className="programs-container">
+        <Script
+        src="https://cdn.jsdelivr.net/npm/@mux/mux-player/dist/mux-player.js"
+        strategy="lazyOnload"
+      />
         <div className="programs-header">
           <div className="programs-title-wrapper">
             <h2 className="programs-title">
@@ -125,7 +130,7 @@ const ProgramsSection = () => {
             <MuxPlayer
               playbackId="vlnvNCueFWnf00D025UTlVFP01q7FoOIS1npJosVxQc3vU"
               accentColor="var(--primary-green)"
-              poster="video-cover3.webp"
+              poster="video-cover4.webp"
               muted
               playsInline
               className="rounded-lg md:rounded-2xl overflow-hidden"

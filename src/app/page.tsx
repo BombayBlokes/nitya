@@ -1,21 +1,66 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
-import ProgramsSection from "@/components/ProgramsSection";
-import EnrollSection from "@/components/EnrollSection";
-import ImpactSection from "@/components/ImpactSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import ModulesSection from "@/components/ModulesSection";
-import ProcessSection from "@/components/ProcessSection";
-import SuccessSection from "@/components/SuccessSection";
 
-import ProgramArchitects from "@/components/ProgramArchitects";
-// import CallToAction from "@/components/CallToAction";
-import GallerySection from "@/components/GallerySection";
-import FAQSection from "@/components/FAQSection";
-import CredentialsSection from "@/components/CredentialsSection";
-import Blogs from "@/components/Blogs";
-import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
+
+const ProgramsSection = dynamic(() => import("@/components/ProgramsSection"), {
+  ssr: false,
+});
+
+const EnrollSection = dynamic(() => import("@/components/EnrollSection"), {
+  ssr: false,
+});
+
+const ImpactSection = dynamic(() => import("@/components/ImpactSection"), {
+  ssr: false,
+});
+
+const FeaturesSection = dynamic(() => import("@/components/FeaturesSection"), {
+  ssr: false,
+});
+
+const ModulesSection = dynamic(() => import("@/components/ModulesSection"), {
+  ssr: false,
+});
+
+const ProcessSection = dynamic(() => import("@/components/ProcessSection"), {
+  ssr: false,
+});
+
+const SuccessSection = dynamic(() => import("@/components/SuccessSection"), {
+  ssr: false,
+});
+
+const ProgramArchitects = dynamic(
+  () => import("@/components/ProgramArchitects"),
+  {
+    ssr: false,
+  }
+);
+
+const GallerySection = dynamic(() => import("@/components/GallerySection"), {
+  ssr: false,
+});
+
+const FAQSection = dynamic(() => import("@/components/FAQSection"), {
+  ssr: false,
+});
+
+const CredentialsSection = dynamic(
+  () => import("@/components/CredentialsSection"),
+  {
+    ssr: false,
+  }
+);
+
+const Blogs = dynamic(() => import("@/components/Blogs"), {
+  ssr: false,
+});
+
+const Footer = dynamic(() => import("@/components/Footer"), {
+  ssr: false,
+});
 
 export default function Home() {
   const stepsData = [
@@ -43,43 +88,42 @@ export default function Home() {
         "Schools receive impact assessment reports and follow-up sessions.",
     },
   ];
+
   return (
-    <>
-      <main>
-        <Header />
-    
-     
-        <Hero />
+    <main>
+      <Header />
+      <Hero />
+      <AboutSection />
 
-        <AboutSection />
+      <ProgramsSection />
 
-        <ProgramsSection />
+      <div id="who-can-enroll">
+        <EnrollSection />
+      </div>
 
-        <div id="who-can-enroll">
-          <EnrollSection />
-        </div>
-        <FeaturesSection />
-        <ImpactSection />
-        <div id="programs">
-          <ProgramArchitects />
-        </div>
-        <ModulesSection />
-        <CredentialsSection />
-        <GallerySection />
-        <FAQSection />
-        <ProcessSection steps={stepsData} />
-        <div id="success-stories">
-          <SuccessSection />
-        </div>
-        <Blogs />
+      <FeaturesSection />
+      <ImpactSection />
 
-        <div id="contact"></div>
+      <div id="programs">
+        <ProgramArchitects />
+      </div>
 
+      <ModulesSection />
+      <CredentialsSection />
+      <GallerySection />
+      <FAQSection />
 
+      <ProcessSection steps={stepsData} />
 
-           <Footer />
-      </main>
-      {/* <CallToAction /> */}
-    </>
+      <div id="success-stories">
+        <SuccessSection />
+      </div>
+
+      <Blogs />
+
+      <div id="contact"></div>
+
+      <Footer />
+    </main>
   );
 }

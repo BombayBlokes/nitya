@@ -37,12 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${philosopher.variable} ${montserrat.variable} font-sans`}
     >
-      <head>
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/@mux/mux-player/dist/mux-player.js"
-  ></script>
-</head>
+      
 
       <body>
         <GoogleAnalytics />
@@ -54,7 +49,7 @@ export default function RootLayout({
           type="text/javascript"
           src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
           id="aisensy-wa-widget"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           widget-id="aaadda"
         />
       </body>
