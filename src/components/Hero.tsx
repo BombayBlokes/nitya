@@ -278,7 +278,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="md:hidden block">
-        <p className="text-white text-center text-sm px-4">
+        <p className="text-gray-100 text-center text-sm px-4">
           <br />
           NITYA Teacher Training Program is a personalized, need-based training
           to empower educators in today&apos;s evolving landscape.
@@ -297,7 +297,7 @@ const Hero = () => {
               fill="#FF9D00"
             />
           </svg>
-          <p className="text-white text-center text-sm px-6">
+          <p className="text-gray-100 text-center text-sm px-6">
             Creating Impactful Learning Environments Across Schools
           </p>
           <div className="grid grid-cols-2 gap-4">

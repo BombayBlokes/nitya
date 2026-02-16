@@ -91,11 +91,12 @@ const Blogs: React.FC = () => {
             <h3 className="blog-title">{blog.title}</h3>
             <p className="blog-desc">{blog.description}</p>
             
-            <a
+          <a
   href="https://navneettoptech.com/blog?e-filter-4ee62cb-category=nitya"
   target="_blank"
   rel="noopener noreferrer"
   className="read-more-button"
+  aria-label={`Read more about ${blog.title}`}
 >
   Read More
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
