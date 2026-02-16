@@ -2,31 +2,31 @@
 
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' 
-    https://www.googletagmanager.com 
-    https://cdn.jsdelivr.net 
-    https://d3mkw6s8thqya7.cloudfront.net;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline'
+    https://www.googletagmanager.com
+    https://cdn.jsdelivr.net
+    https://d3mkw6s8thqya7.cloudfront.net
+    https://www.youtube.com
+    https://www.youtube-nocookie.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  img-src 'self' data: https: blob:;
+  img-src 'self' data: https: blob: https://img.youtube.com;
   font-src 'self' https://fonts.gstatic.com;
-  connect-src 'self' https:;
+  connect-src 'self' https: https://www.youtube.com https://www.youtube-nocookie.com;
   form-action 'self';
   frame-ancestors 'none';
-  frame-src 'self';
+  frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;
   media-src 'self' https:;
   object-src 'none';
   manifest-src 'self';
   worker-src 'self' blob:;
   base-uri 'self';
   upgrade-insecure-requests;
-`
-  .replace(/\s{2,}/g, " ")
-  .trim();
+`;
 
 const securityHeaders = [
   {
     key: "Content-Security-Policy",
-    value: cspHeader,
+    value: cspHeader.replace(/\s{2,}/g, " ").trim(),
   },
   {
     key: "X-Content-Type-Options",
@@ -57,18 +57,11 @@ const securityHeaders = [
     key: "Cross-Origin-Opener-Policy",
     value: "same-origin",
   },
-  {
-    key: "Cross-Origin-Resource-Policy",
-    value: "same-origin",
-  },
-  {
-    key: "Cross-Origin-Embedder-Policy",
-    value: "require-corp",
-  },
 ];
 
 const nextConfig = {
   poweredByHeader: false,
+  swcMinify: true,
 
   images: {
     remotePatterns: [
@@ -81,9 +74,7 @@ const nextConfig = {
         hostname: "img.youtube.com",
       },
     ],
-
     formats: ["image/avif", "image/webp"],
-
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
 

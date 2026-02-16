@@ -21,7 +21,7 @@ export default function NotFound(): JSX.Element {
       </p>
 
       <Link
-          href="#form-get-in-touch "
+          href="/"
           className="button "
           style={{ marginRight: "1rem" , marginTop: "1rem"}}
           aria-label="Get Started"

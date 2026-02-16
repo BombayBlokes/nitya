@@ -24,7 +24,8 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Teacher Training Program for School Teachers | NITYA Training",
-  description: "Nitya Training offers a structured teacher training program with certified workshops and online learning to support professional development for school teachers.",
+  description:
+    "Nitya Training offers a structured teacher training program with certified workshops and online learning to support professional development for school teachers.",
 };
 
 export default function RootLayout({
@@ -37,19 +38,23 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${philosopher.variable} ${montserrat.variable} font-sans`}
     >
-      
-
       <body>
         <GoogleAnalytics />
         <SeoSchemas />
 
         <main>{children}</main>
 
+        {/* WhatsApp Widget - Load Late */}
         <Script
-          type="text/javascript"
-          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
-          id="aisensy-wa-widget"
+          src="https://d3mkw6s8thqya7.cloudfront.net/widget-plugin.js"
           strategy="lazyOnload"
+          id="aisensy-widget-plugin"
+        />
+
+        <Script
+          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+          strategy="lazyOnload"
+          id="aisensy-integration-plugin"
           widget-id="aaadda"
         />
       </body>
