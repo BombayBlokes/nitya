@@ -37,7 +37,14 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${philosopher.variable} ${montserrat.variable} font-sans`}
+      
     >
+      <head>
+        <link
+          rel="canonical"
+          href="https://www.nityatraining.com"
+        />
+      </head>
       <body>
         <GoogleAnalytics />
         <SeoSchemas />
