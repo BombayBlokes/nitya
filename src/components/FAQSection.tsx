@@ -26,7 +26,7 @@ const FAQSection = () => {
     },
     {
       question: "What certification will I receive?",
-      answer: "Upon successful completion of the program, participants receive a certificate jointly endorsed by Navneet Education Limited and Aditya Birla Education Academy, recognizing their professional development."
+      answer: "Upon successful completion of the program, participants receive a certificate jointly endorsed by Navneet Education Limited, recognizing their professional development."
     },
     {
       question: "How can I register for the program?",
