@@ -121,7 +121,7 @@ const AboutSection = () => {
   };
 
   const handleDownloadBrochure = () => {
-  const brochureUrl = "/pdf/nitya-brochure-new.pdf";
+  const brochureUrl = "/pdf/NITYA_Brochure_May_2026.pdf";
   const link = document.createElement("a");
   link.href = brochureUrl;
   link.setAttribute("download", "NITYA_Brochure.pdf");
