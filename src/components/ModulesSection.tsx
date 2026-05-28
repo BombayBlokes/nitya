@@ -260,7 +260,7 @@ const modules = [
       },
       {
         title:
-          "7. Use of Artificial Intelligence in Classrooms ",
+          "8. Use of Artificial Intelligence in Classrooms ",
         description: "Establish a well-structured, disciplined classroom",
         duration: "Total 6 hours | 1 day",
         targetAudience: [
