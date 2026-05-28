@@ -340,7 +340,7 @@ const modules = [
         ],
       },
       {
-        title: "4. Happy Classrooms ",
+        title: "5. Happy Classrooms ",
         description: "Develop learning outcomes and pedagogies",
         duration: "Total 6 hours | 1 day",
         targetAudience: [
@@ -352,7 +352,7 @@ const modules = [
         ],
       },
       {
-        title: "4. Stress Management ",
+        title: "6. Stress Management ",
         description: "Develop learning outcomes and pedagogies",
         duration: "Total 6 hours | 1 day",
         targetAudience: [
@@ -364,7 +364,7 @@ const modules = [
         ],
       },
       {
-        title: "4. Classroom Management",
+        title: "7. Classroom Management",
         description: "Develop learning outcomes and pedagogies",
         duration: "Total 12 hours | 2 day",
         targetAudience: [
@@ -376,21 +376,21 @@ const modules = [
         ],
       },
       {
-        title: "4. Induction Training Programme (Guru Dakshata) ",
-        description: "Develop learning outcomes and pedagogies",
-        duration: "Total 12 hours | 2 day",
-        targetAudience: [
-          "Teachers",
-          "Subject HODs",
-          "Coordinators",
-          "Vice Principals",
-          "Principals",
-        ],
-      },
-      {
-        title: "4. Leading Transformation ",
+        title: "8. Induction Training Programme (Guru Dakshata) ",
         description: "Develop learning outcomes and pedagogies",
         duration: "Total 18 hours | 3 day",
+        targetAudience: [
+          "Teachers",
+          "Subject HODs",
+          "Coordinators",
+          "Vice Principals",
+          "Principals",
+        ],
+      },
+      {
+        title: "9. Leading Transformation ",
+        description: "Develop learning outcomes and pedagogies",
+        duration: "Total 12 hours | 2 day",
         targetAudience: [
           "Teachers",
           "Subject HODs",
